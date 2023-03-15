@@ -55,4 +55,13 @@ Copy code
 import "log"
 log.Println("Erro: Falha ao carregar arquivo.")
 Esses são apenas alguns dos métodos de impressão disponíveis em Go. Cada um tem seus próprios recursos e usos adequados, e pode ser útil para diferentes cenários e necessidades de impressão.
+
+
+Funções continuação
+Quando dois ou mais parâmetros nomeados consecutivos de uma função compartilham o mesmo tipo, você pode omitir o tipo de todos menos o último. Neste exemplo, vamos encurtar
+
+x int, y int
+para
+
+x, y int
 */
