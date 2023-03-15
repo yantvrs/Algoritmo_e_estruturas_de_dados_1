@@ -27,12 +27,18 @@ fmt.Print: Imprime uma string simples sem formatação adicional. É o mais bás
 python
 Copy code
 fmt.Print("Olá, mundo!")
+
+
+
 fmt.Println: Imprime uma string com uma nova linha adicionada no final. É muito útil para separar as saídas em linhas diferentes. Exemplo:
 
 python
 Copy code
 fmt.Println("Olá,")
 fmt.Println("mundo!")
+
+
+
 fmt.Printf: Imprime uma string formatada, onde pode-se incluir placeholders para variáveis ou expressões. É semelhante à função printf em C. Exemplo:
 
 go
@@ -40,6 +46,8 @@ Copy code
 idade := 25
 nome := "João"
 fmt.Printf("%s tem %d anos.\n", nome, idade)
+
+
 fmt.Sprintf: Funciona de maneira semelhante ao fmt.Printf, mas em vez de imprimir na saída padrão, retorna a string formatada como resultado. Exemplo:
 
 go
@@ -48,6 +56,8 @@ idade := 25
 nome := "João"
 resultado := fmt.Sprintf("%s tem %d anos.", nome, idade)
 fmt.Println(resultado)
+
+
 log.Print, log.Println e log.Printf: Essas funções estão no pacote log, que é útil para imprimir mensagens de log e depuração. Elas são semelhantes aos métodos de impressão do pacote fmt, mas adicionam informações adicionais, como a hora em que a mensagem foi registrada. Exemplo:
 
 python
