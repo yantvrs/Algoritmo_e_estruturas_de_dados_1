@@ -94,7 +94,27 @@ func (list *LinkedList) Get(index int) *Node {
 
 // Função principal
 func main() {
-	list := &LinkedList{} // Criando uma nova lista encadeada
+	// Criando uma lista encadeada vazia
+	list := &LinkedList{}
 
-	list.Add(1) // Adicionando alguns nós
-	list.Add
+	// Adicionando alguns nós na lista
+	list.Add(10)
+	list.Add(20)
+	list.Add(30)
+	list.Add(40)
+
+	// Imprimindo o tamanho da lista
+	fmt.Printf("Tamanho da lista: %d\n", list.Size())
+
+	// Imprimindo o valor do segundo nó
+	secondNode := list.Get(1)
+	if secondNode != nil {
+		fmt.Printf("Valor do segundo nó: %d\n", secondNode.data)
+	}
+
+	// Removendo o terceiro nó da lista
+	list.Remove(30)
+
+	// Imprimindo o tamanho da lista novamente
+	fmt.Printf("Tamanho da lista após remover um nó: %d\n", list.Size())
+}
