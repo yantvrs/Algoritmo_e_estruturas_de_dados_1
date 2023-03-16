@@ -8,6 +8,21 @@ func main() {
 		sum += i
 	}
 	fmt.Println(sum)
+
+	// Ou
+	/*
+		sum := 1
+		for ; sum < 1000; {
+			sum += sum
+		}
+		fmt.Println(sum)
+	*/
+
+	/*
+		For (continuação)
+	A instrução inicial e a pós-instrução são opcionais.
+
+	*/
 }
 
 /*
