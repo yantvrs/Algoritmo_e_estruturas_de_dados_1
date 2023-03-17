@@ -13,6 +13,9 @@ func main() {
 
 	s = s[1:]
 	fmt.Println(s)
+
+	s = s[:]
+	fmt.Println(s)
 }
 
 /*
