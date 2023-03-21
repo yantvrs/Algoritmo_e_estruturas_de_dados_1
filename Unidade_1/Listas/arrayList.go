@@ -118,7 +118,7 @@ func main() {
 
 	// Imprime todos os elementos da lista
 	for i := 0; i < list.Size(); i++ {
-		fmt.Println(list.Get(i))
+		fmt.Print(list.Get(i))
 	}
 
 	// Remove o último elemento da lista
