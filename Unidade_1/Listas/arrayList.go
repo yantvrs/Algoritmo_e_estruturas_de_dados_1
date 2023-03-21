@@ -4,6 +4,17 @@ import "fmt"
 
 type ArrayList struct {
 	items []int
+	cap   int
+}
+
+// Inicia a execução de inicialização
+func (list *ArrayList) Init() {
+	list.items = make([]int, 10)
+}
+
+// Dobra o tamanho do arrayList
+func (list *ArrayList) double() {
+
 }
 
 // Adiciona um novo elemento à lista
