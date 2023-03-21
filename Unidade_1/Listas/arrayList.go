@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 type ArrayList struct {
 	items []int // array que armazena os elementos da lista
 	cap   int   // capacidade da lista
@@ -89,4 +91,48 @@ func (list *ArrayList) Set(value, index int) {
 		list.items[index] = value
 	}
 	//TODO: adicionar tratamento de erro
+}
+
+// Função principal
+func main() {
+	list := ArrayList{}
+	list.Init()
+
+	// Adiciona elementos na lista
+	list.Add(1)
+	list.Add(2)
+	list.Add(3)
+	list.Add(4)
+	list.Add(5)
+	list.Add(6)
+	list.Add(7)
+	list.Add(8)
+	list.Add(9)
+	list.Add(10)
+
+	// Adiciona um novo elemento na posição 5
+	list.AddOnIndex(15, 5)
+
+	// Imprime o tamanho da lista
+	fmt.Println("Tamanho da lista:", list.Size())
+
+	// Imprime todos os elementos da lista
+	for i := 0; i < list.Size(); i++ {
+		fmt.Println(list.Get(i))
+	}
+
+	// Remove o último elemento da lista
+	list.Remove()
+
+	// Remove o elemento na posição 3
+	list.RemoveOnIndex(3)
+
+	// Altera o valor do elemento na posição 2 para 20
+	list.Set(20, 2)
+
+	// Imprime todos os elementos da lista após as alterações
+	fmt.Println("Tamanho da lista após as alterações:", list.Size())
+	for i := 0; i < list.Size(); i++ {
+		fmt.Println(list.Get(i))
+	}
 }
