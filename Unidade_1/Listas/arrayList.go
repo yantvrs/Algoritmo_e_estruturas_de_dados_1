@@ -52,9 +52,19 @@ func (list *ArrayList) AddOnIndex(newItem int, index int) {
 	list.cap++
 }
 
-// Remove um elemento da lista
+// Remove um elemento da arrayList
 func (list *ArrayList) Remove() {
 	if list.cap > 0 {
+		list.cap--
+	}
+}
+
+// Remove um elemento da arrayList em posição específica
+func (list *ArrayList) RemoveOnIndex(index int) {
+	if index >= 0 && index < list.cap {
+		for i := index; i < list.cap; i++ {
+			list.items[i] = list.items[i+1]
+		}
 		list.cap--
 	}
 }
@@ -64,9 +74,18 @@ func (list *ArrayList) Size() int {
 	return len(list.items)
 }
 
-// Retorna o elemento na posição especificada na lista
 func (list *ArrayList) Get(index int) int {
-	return list.items[index]
+	if index >= 0 && index < list.cap {
+		return list.items[index]
+	}
+	return -1 //TODO: add error handling
+}
+
+func (list *ArrayList) Set(value, index int) {
+	if index >= 0 && index < list.cap {
+		list.items[index] = value
+	}
+	//else //TODO: add error handling
 }
 
 func main() {
