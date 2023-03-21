@@ -52,9 +52,11 @@ func (list *ArrayList) AddOnIndex(newItem int, index int) {
 	list.cap++
 }
 
-// Remove um elemento da lista pelo índice
-func (list *ArrayList) Remove(index int) {
-	list.items = append(list.items[:index], list.items[index+1:]...)
+// Remove um elemento da lista
+func (list *ArrayList) Remove() {
+	if list.cap > 0 {
+		list.cap--
+	}
 }
 
 // Retorna o número de elementos na lista
