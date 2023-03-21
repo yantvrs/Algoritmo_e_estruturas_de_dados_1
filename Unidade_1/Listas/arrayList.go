@@ -38,6 +38,18 @@ func (list *ArrayList) Add(newItem int) {
 // Adiciona um novo elemento em uma posição específica
 func (list *ArrayList) AddOnIndex(newItem int, index int) {
 
+	// Dobra a arrayList caso não haja espaço suficiente
+	if list.cap == len(list.items) {
+		list.double()
+	}
+
+	// Alocando os items em novas posições
+	for i := list.cap; i > index; i-- {
+		list.items[i] = list.items[i-1]
+	}
+
+	list.items[index] = newItem
+	list.cap++
 }
 
 // Remove um elemento da lista pelo índice
