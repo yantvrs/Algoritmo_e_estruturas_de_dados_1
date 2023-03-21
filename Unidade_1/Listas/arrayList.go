@@ -14,12 +14,30 @@ func (list *ArrayList) Init() {
 
 // Dobra o tamanho do arrayList
 func (list *ArrayList) double() {
+	doubleItems := make([]int, len(list.items)*2)
 
+	for i := 0; i < len(list.items); i++ {
+		doubleItems[i] = list.items[i]
+	}
+
+	list.items = doubleItems
 }
 
 // Adiciona um novo elemento à lista
-func (list *ArrayList) Add(item int) {
-	list.items = append(list.items, item)
+func (list *ArrayList) Add(newItem int) {
+
+	// Dobra a arrayList caso não haja espaço suficiente
+	if list.cap == len(list.items) {
+		list.double()
+	}
+
+	list.items[list.cap] = newItem
+	list.cap++
+}
+
+// Adiciona um novo elemento em uma posição específica
+func (list *ArrayList) AddOnIndex(newItem int, index int) {
+
 }
 
 // Remove um elemento da lista pelo índice
