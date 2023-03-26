@@ -10,3 +10,6 @@ A disciplina também tem como objetivo apresentar a linguagem de programação G
 Para utilizar os códigos e simulações disponíveis neste repositório, é necessário ter o Go instalado em sua máquina. Além disso, é preciso ter conhecimento em programação na linguagem Go.
 
 Para executar um código ou simulação, basta navegar até a pasta correspondente e executar o comando go run nome_do_arquivo.go no terminal. Em seguida, siga as instruções contidas no arquivo README da pasta para executar o código ou simulação desejados.
+
+# Licença
+Este repositório é licenciado sob a licença MIT. Consulte o arquivo LICENSE para obter mais informações.
