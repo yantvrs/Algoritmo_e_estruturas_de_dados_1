@@ -1,34 +1,31 @@
 package main
 
-// Estrutura que representa a linkedlist
 type linkedList struct {
-	head *node
+	head *firstNode
 	size int
 }
 
-// Estrutura que representa cada nó
-type node struct {
-	value int
-	next  *node
+type firstNode struct {
+	value    int
+	nextNode *firstNode
 }
 
-// Adiciona elemento no final da lista
 func (list *linkedList) Add(value int) {
-	newNode := node{value, nil}
+	newNode := firstNode{value, nil}
 
-	assistant := linkedList.head
-	prev := assistant
+	aux := list.head
+	prev := aux
 
-	for assistant != nil {
-		prev := assistant
-		assistant := assistant.next
+	for aux != nil {
+		prev = aux
+		aux = aux.nextNode
 	}
 
 	if prev == nil {
-		linkedList.head = &newNode
+		list.head = &newNode
 	} else {
-		prev.next := &newNode
+		prev.nextNode = &newNode
 	}
 
-	linkedList.size++
+	list.size++
 }
