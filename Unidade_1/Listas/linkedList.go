@@ -1,31 +1,115 @@
 package main
 
-type linkedList struct {
-	head *firstNode
+// Node representa um nó da lista encadeada
+type Node struct {
+	value int
+	next  *Node
+}
+
+// LinkedList representa uma lista encadeada
+type LinkedList struct {
+	head *Node
 	size int
 }
 
-type firstNode struct {
-	value    int
-	nextNode *firstNode
+// Add adiciona um novo nó contendo o valor dado no final da lista encadeada
+func (ll *LinkedList) Add(value int) {
+	newNode := &Node{value, nil}
+	if ll.head == nil {
+		ll.head = newNode
+	} else {
+		current := ll.head
+		for current.next != nil {
+			current = current.next
+		}
+		current.next = newNode
+	}
+	ll.size++
 }
 
-func (list *linkedList) Add(value int) {
-	newNode := firstNode{value, nil}
-
-	aux := list.head
-	prev := aux
-
-	for aux != nil {
-		prev = aux
-		aux = aux.nextNode
+// AddOnIndex adiciona um novo nó contendo o valor dado na posição index da lista encadeada
+func (ll *LinkedList) AddOnIndex(index int, value int) {
+	if index < 0 || index > ll.size {
+		panic("Index out of bounds")
 	}
-
-	if prev == nil {
-		list.head = &newNode
+	newNode := &Node{value, nil}
+	if index == 0 {
+		newNode.next = ll.head
+		ll.head = newNode
 	} else {
-		prev.nextNode = &newNode
+		current := ll.head
+		for i := 0; i < index-1; i++ {
+			current = current.next
+		}
+		newNode.next = current.next
+		current.next = newNode
 	}
+	ll.size++
+}
 
-	list.size++
+// Remove remove o nó contendo o valor dado da lista encadeada
+func (ll *LinkedList) Remove(value int) {
+	if ll.head == nil {
+		panic("List is empty")
+	}
+	if ll.head.value == value {
+		ll.head = ll.head.next
+		ll.size--
+		return
+	}
+	current := ll.head
+	for current.next != nil && current.next.value != value {
+		current = current.next
+	}
+	if current.next == nil {
+		panic("Value not found")
+	}
+	current.next = current.next.next
+	ll.size--
+}
+
+// RemoveOnIndex remove o nó na posição index da lista encadeada
+func (ll *LinkedList) RemoveOnIndex(index int) {
+	if index < 0 || index >= ll.size {
+		panic("Index out of bounds")
+	}
+	if index == 0 {
+		ll.head = ll.head.next
+	} else {
+		current := ll.head
+		for i := 0; i < index-1; i++ {
+			current = current.next
+		}
+		current.next = current.next.next
+	}
+	ll.size--
+}
+
+// Get retorna o valor do nó na posição index da lista encadeada
+func (ll *LinkedList) Get(index int) int {
+	if index < 0 || index >= ll.size {
+		panic("Index out of bounds")
+	}
+	current := ll.head
+	for i := 0; i < index; i++ {
+		current = current.next
+	}
+	return current.value
+}
+
+// Set altera o valor do nó na posição index da lista encadeada para o valor dado
+func (ll *LinkedList) Set(index int, value int) {
+	if index < 0 || index >= ll.size {
+		panic("Index out of bounds")
+	}
+	current := ll.head
+	for i := 0; i < index; i++ {
+		current = current.next
+	}
+	current.value = value
+}
+
+// Size retorna o tamanho da lista encadeada
+func (list *LinkedList) Size() int {
+	return list.size
 }
