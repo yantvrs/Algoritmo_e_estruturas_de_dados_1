@@ -13,18 +13,18 @@ type LinkedList struct {
 }
 
 // Add adiciona um novo nó contendo o valor dado no final da lista encadeada
-func (ll *LinkedList) Add(value int) {
+func (list *LinkedList) Add(value int) {
 	newNode := &Node{value, nil}
-	if ll.head == nil {
-		ll.head = newNode
+	if list.head == nil {
+		list.head = newNode
 	} else {
-		current := ll.head
+		current := list.head
 		for current.next != nil {
 			current = current.next
 		}
 		current.next = newNode
 	}
-	ll.size++
+	list.size++
 }
 
 // AddOnIndex adiciona um novo nó contendo o valor dado na posição index da lista encadeada
