@@ -15,6 +15,7 @@ type LinkedList struct {
 // Add adiciona um novo nó contendo o valor dado no final da lista encadeada
 func (list *LinkedList) Add(value int) {
 	newNode := &Node{value, nil}
+
 	if list.head == nil {
 		list.head = newNode
 	} else {
@@ -24,27 +25,33 @@ func (list *LinkedList) Add(value int) {
 		}
 		current.next = newNode
 	}
+
 	list.size++
 }
 
 // AddOnIndex adiciona um novo nó contendo o valor dado na posição index da lista encadeada
-func (ll *LinkedList) AddOnIndex(index int, value int) {
-	if index < 0 || index > ll.size {
+func (list *LinkedList) AddOnIndex(index int, value int) {
+	if index < 0 || index > list.size {
 		panic("Index out of bounds")
 	}
+
 	newNode := &Node{value, nil}
+
 	if index == 0 {
-		newNode.next = ll.head
-		ll.head = newNode
+		newNode.next = list.head
+		list.head = newNode
 	} else {
-		current := ll.head
+		current := list.head
+
 		for i := 0; i < index-1; i++ {
 			current = current.next
 		}
+
 		newNode.next = current.next
 		current.next = newNode
 	}
-	ll.size++
+
+	list.size++
 }
 
 // Remove remove o nó contendo o valor dado da lista encadeada
