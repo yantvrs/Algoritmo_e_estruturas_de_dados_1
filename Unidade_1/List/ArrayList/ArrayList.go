@@ -1,9 +1,4 @@
-package main
 
-type ArrayList struct {
-	items []int //Array que armazena os elementos da lista
-	cap   int   //Capacidade da lista
-}
 
 // Inicialização da lista
 
@@ -16,3 +11,11 @@ type ArrayList struct {
 // Remover elemento no final
 
 // Remover elemento em uma posição específica
+
+// Obter elemento em uma dada posição da lista
+
+// Trocar um elemento por outro
+
+// Tamanho da lista
+
+// Função principal

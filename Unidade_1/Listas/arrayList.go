@@ -118,8 +118,9 @@ func main() {
 
 	// Imprime todos os elementos da lista
 	for i := 0; i < list.Size(); i++ {
-		fmt.Print(list.Get(i))
+		fmt.Print(list.Get(i), " ")
 	}
+	fmt.Println()
 
 	// Remove o último elemento da lista
 	list.Remove()
@@ -133,6 +134,6 @@ func main() {
 	// Imprime todos os elementos da lista após as alterações
 	fmt.Println("Tamanho da lista após as alterações:", list.Size())
 	for i := 0; i < list.Size(); i++ {
-		fmt.Println(list.Get(i))
+		fmt.Print(list.Get(i), " ")
 	}
 }
