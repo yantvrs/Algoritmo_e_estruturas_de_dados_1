@@ -16,7 +16,6 @@ type LinkedList struct {
 
 // Função que imprime a lista
 func (list *LinkedList) Print() {
-
 	auxiliary := list.head
 
 	for auxiliary != nil {
