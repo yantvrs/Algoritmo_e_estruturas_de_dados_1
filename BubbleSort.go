@@ -14,8 +14,8 @@ func BubbleSort( v []int) {
                 change = true
             }
         }
-        if change != true {
-            return
+        if change == true {
+            break
         }
     }
 }
