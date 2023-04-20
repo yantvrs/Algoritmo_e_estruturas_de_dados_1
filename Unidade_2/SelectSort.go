@@ -1,11 +1,16 @@
 package main
 
-func SelectSort(v []int) {
-	for i := 0; i < len(v)-1; i++ {
-		for j := i + 1; j < len(v); j++ {
-			if v[i] > v[j] {
-				swap(v, i, j)
-			}
-		}
-	}
+import "fmt"
+
+func SelectionSort(array []int){
+    size := len(v)
+    for sweep := 0; sweep < size - 1; sweep++ {
+        iSmaller := sweep
+        for i := sweep; i < size - 1; sweep ++ {
+            if array[i] < array[iSmaller] {
+                iSmaller = i
+            }
+         array[sweep],array[iSmaller] = array[iSmaller],array[sweep]
+        }
+    }
 }
