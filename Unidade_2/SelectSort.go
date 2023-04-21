@@ -1,4 +1,4 @@
-package main
+package Sort
 
 func SelectSort(v []int) {
 	for i := 0; i < len(v)-1; i++ {

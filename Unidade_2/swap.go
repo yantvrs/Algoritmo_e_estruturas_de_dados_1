@@ -1,4 +1,4 @@
-package swap
+package Sort
 
 func swap(array []int, i int, j int) {
 	auxiliary := array[i]
