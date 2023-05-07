@@ -2,13 +2,13 @@ package main
 
 import "fmt"
 
-func BubbleSort(v []int) {
-	size := len(v)
+func BubbleSort(array []int) {
+	size := len(array)
 	for j := 0; j < size-1; j++ {
 		change := false
 		for i := 0; i < size-1-j; i++ {
-			if v[i] > v[i+1] {
-				v[i], v[i+1] = v[i+1], v[i]
+			if array[i] > array[i+1] {
+				array[i], array[i+1] = array[i+1], array[i]
 				change = true
 			}
 		}
