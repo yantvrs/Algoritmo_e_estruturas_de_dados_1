@@ -1,4 +1,6 @@
-package Sort
+package main
+
+import "fmt"
 
 func BubbleSort(v []int) {
 	size := len(v)
@@ -14,4 +16,14 @@ func BubbleSort(v []int) {
 			break
 		}
 	}
+}
+
+func main() {
+	array := []int{9, 2, 5, 6, 7, 8, 4, 1, 3}
+
+	fmt.Println("Unordered vector", array)
+
+	BubbleSort(array)
+	fmt.Println("Ordered", array)
+	
 }
