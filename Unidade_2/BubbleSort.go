@@ -2,6 +2,17 @@ package main
 
 import "fmt"
 
+/*
+[6,2,9,8,7]
+size = 5
+j = 0
+change = false
+i = 0 
+array[i] = 6
+array[i+1] = 
+
+*/
+
 func BubbleSort(array []int) {
 	size := len(array)
 	for j := 0; j < size-1; j++ {
