@@ -24,8 +24,21 @@ func SelectionSort(v []int) {
 }
 
 // b)BubbleSort (in-place)
-func BubbleSort() {
+func BubbleSort(v []int) {
+	size := len(v)
 
+	for j := 0; j < size - 1; j++ {
+		change := false
+		for i := 0 ; i < size - j - 1; i++ {
+			if v[i] > v[i+1] {
+				v[i], v[i+1] = v[i+1], v[i]
+				change = true
+			}
+		}
+		if change == false {
+			break
+		}
+	}
 }
 
 // c)InsertionSort (in-place)
@@ -54,7 +67,12 @@ func main() {
 	array := []int{9, 2, 5, 6, 7, 8, 4, 1, 3}
 	fmt.Println("\nVetor desordenado:", array)
 
+	// a)
 	fmt.Println("\nSelectionSort:")
 	SelectionSort(array)
 	fmt.Println("Ordenado: ", array)
+
+	// b) 
+	fmt.Println("\nBubbleSort:")
+	BubbleSort(array)
 }
