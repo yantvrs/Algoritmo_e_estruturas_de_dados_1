@@ -42,13 +42,70 @@ func BubbleSort(v []int) {
 }
 
 // c)InsertionSort (in-place)
-func InsertionSort() {
-
+func InsertionSort(v []int) {
+	size := len(v)
+	for i := 1 ; i < size ; i++ {
+		for j := i; j > 0; j--{
+			if v[j] < v[j-1] {
+				v[j], v[j-1] = v[j-1], v[j]
+			} else {
+				break
+			}
+		}
+	} 
 }
 
 // d)MergeSort
-func MergeSort() {
+func Merge(v []int, start int, middle int, end int) {
 
+	sizeLeft := middle - start + 1
+	sizeRight := end - middle
+
+	left := make([]int,sizeLeft)
+	right := make([]int,sizeRight)
+
+	for i := 0; i < sizeLeft; i++ {
+		left[i] = v[start + i]
+	}
+	for i := 0; i < sizeRight; i++ {
+		right[i] = v[middle + 1 + i]
+	}
+	
+	i := 0
+	j := 0
+	k := start
+
+	for i < sizeLeft && j < sizeRight {
+		if left[i] < right[j]{
+			v[k] = left[i]
+			i++
+		} else {
+			v[k] = right[j]
+			j++
+		}
+		k++
+	}
+
+	for i < sizeLeft {
+        v[k] = left[i]
+        i++
+        k++
+    }
+    for j < sizeRight {
+        v[k] = right[j]
+        j++
+        k++
+    }
+
+}
+
+func MergeSort(v []int, start int, end int) {
+    if start < end {
+        middle := (start + end) / 2
+        MergeSort(v, start, middle)
+        MergeSort(v, middle+1, end)
+        Merge(v, start, middle, end)
+    }
 }
 
 // e)QuickSort(com randomização de pivô)
@@ -67,12 +124,33 @@ func main() {
 	array := []int{9, 2, 5, 6, 7, 8, 4, 1, 3}
 	fmt.Println("\nVetor desordenado:", array)
 
-	// a)
-	fmt.Println("\nSelectionSort:")
-	SelectionSort(array)
-	fmt.Println("Ordenado: ", array)
+	
+	alternativa := "d"
 
-	// b) 
-	fmt.Println("\nBubbleSort:")
-	BubbleSort(array)
+
+	if alternativa == "a" {
+		// a)
+		fmt.Println("\nSelectionSort:")
+		SelectionSort(array)
+		fmt.Println("Ordenado: ", array)
+	}
+	if alternativa == "b" {
+		// b) 
+		fmt.Println("\nBubbleSort:")
+		BubbleSort(array)
+		fmt.Println("Ordenado: ", array)
+	}
+	if alternativa == "c" {
+		// c) 
+		fmt.Println("\nInsertionSort:")
+		InsertionSort(array)
+		fmt.Println("Ordenado: ", array)
+	}
+	if alternativa == "d" {
+		// d) 
+		fmt.Println("\nMergeSort:")
+		MergeSort(array, 0, len(array)-1)
+		fmt.Println("Ordenado: ", array)
+	}
+
 }
