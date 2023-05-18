@@ -36,6 +36,29 @@ func (bstNode *BstNode) Search(value int) boot{
     }
 }
 
+func (bstNode *BstNode) Min() int {
+    if bstNode.left == nil {
+        return bstNode.value
+    } else {
+        return bstNode.left.Min()
+    }
+}
+
+func (bstNode *BstNode) Max() int {
+    if bstNode.right == nil {
+        return bstNode.value
+    } else {
+        return bstNode.right.Max()
+    }
+}
+
+func (bstNode *BstNode) Println() {
+   
+    
+}
+
+// pre e pos
+
 func main() {
     fmt.Println("Hello world!")
 }
