@@ -2,38 +2,40 @@ package main
 
 import "fmt"
 
-type Bst struct{
-    root *nodeBst
-    size int
-}
-
-struct nodeBst {
-    left *nodeBst
+type BstNode struct {
+    left *BstNode
     int value
-    right *nodeBst
+    right *BstNode
 }
 
-func newNode(value int) *nodeBst{
-    node := nodeBst{}
-    node.value = value
-    node.left = nil
-    node.right = nil
-    return node
-}
-
-func (bst *Bst) Add( value int) {
-    if bst.root == nil{
-        bst.root = newNode(value)
-    }
-    auxiliary := bst.root
-    prev := auxiliary
-    
-    for auxiliary != nil {
-        prev = auxiliary
-        if value <= auxiliary.value {
-            auxiliary = auxiliary.left
+func (bst *BstNode) Add( value int){
+    if value <= bstNode.value {
+        if bstNode.left == nil {
+            bstNode.left = newNode(value)
         } else {
-            auxiliary = auxiliary.right
+            bstNode.left.Add(value)
+        }
+    } else {
+        if bstNode.right == nil {
+            bstNode.right = newNode(value)
+        } else {
+            bstNode.right.Add(value)
         }
     }
+}
+
+func (bstNode *BstNode) Search(value int) boot{
+    if value == bstNode.value {
+        return true
+    } else if value < bstNode.value && bstNode.left != nil {
+        bstNode.left.Search(value)
+    } else if value > bstNode.value && bstNode.right != nil {
+        bstNode.right.Search(value)
+    } else {
+        return false
+    }
+}
+
+func main() {
+    fmt.Println("Hello world!")
 }
