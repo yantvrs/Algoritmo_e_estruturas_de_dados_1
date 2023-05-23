@@ -2,6 +2,18 @@ package main
 
 import "fmt"
 
+/*
+Add(val int)
+Search(val int) bool
+Min() int 
+Max() int 
+PrintPre()
+PrintIn()
+PrintPos()
+Height() int 
+Remove(val int) *BstNode
+*/
+
 type BstNode struct {
     left *BstNode
     int value
