@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"math/rand"
+)
 
 /*1) Programe na linguagem C/Go cada um dos seguintes algoritmos de ordenação:*/
 
@@ -109,14 +112,39 @@ func MergeSort(v []int, start int, end int) {
 }
 
 // e)QuickSort(com randomização de pivô)
-func QuickSort() {
 
+
+func partition(arr []int, low, high int) int {
+	// Selecionar um pivô aleatório
+	randomIndex := rand.Intn(high-low+1) + low
+	arr[high], arr[randomIndex] = arr[randomIndex], arr[high]
+
+	pivot := arr[high]
+	i := low - 1
+
+	for j := low; j < high; j++ {
+		if arr[j] <= pivot {
+			i++
+			arr[i], arr[j] = arr[j], arr[i]
+		}
+	}
+
+	arr[i+1], arr[high] = arr[high], arr[i+1]
+	return i + 1
 }
+
+func quicksort(arr []int, low, high int) {
+	if low < high {
+		// Encontrar o índice de partição
+		pivot := partition(arr, low, high)
+
+		// Ordenar recursivamente as duas metades
+		quicksort(arr, low, pivot-1)
+		quicksort(arr, pivot+1, high)
+	}
+
 
 // f)CoutingSort
-func CoutingSort() {
-
-}
 
 func main() {
 	fmt.Println("Algoritmos de ordenação\nVetor desordenado:")
