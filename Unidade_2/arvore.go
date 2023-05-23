@@ -89,6 +89,43 @@ func (bstNode *BstNode) Height() int {
     }
 }
 
+/*
+Três casos de remoção:
+> Caso 1(Nó folha) : Atualizar ponteiro que apontava para o nó a ser deletado para nil, ou seja, a remoção será feita no nó folha.
+> Caso 2(Nó com um único filho) : Atualizar ponteiro que apontava para o nó a ser deletado para o único filho daquele nó.
+> Caso 3(Nó com dois filhos) : Atualizar ponteiro que apontava para o nó a ser deletado
+*/
+
+func (bstNode *BstNode) Remove(value int) *BstNode {
+    if value < bstNode.value {
+        bstNode.left = bstNode.left.Remove(value)
+    } else if value > bstNode.value {
+        bstNode.right = bstNode.right.Remove(value)
+    } else { 
+        // Encontramos o nó a ser removido
+        // Caso 1 
+        
+        if bstNode.left == nil && bstNode.right == nil { 
+            return nil
+        }
+        
+        // Caso 2
+        
+        else if bstNode.left != nil && bstNode.right == nil {
+            return bstNode.left
+        }
+        else if bstNode.left == nil && bstNode.right != nil {
+            return bstNode.right
+        }
+        
+        // Caso 3
+        else {
+            bstNode.value = bstNode.left.Max()
+            return bstNode.left.Remove(bstNode.left.Max())
+        }
+    }
+}
+
 func main() {
     fmt.Println("Hello world!")
 }
