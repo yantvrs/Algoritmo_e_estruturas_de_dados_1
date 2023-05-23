@@ -2,44 +2,48 @@ package main
 
 import "fmt"
 
-func countingSort(arr []int) {
-	if len(arr) == 0 {
-		return
-	}
+func countingSort(v []int) {
+	sizeV := len(v)
 
-	// Encontrar o valor máximo no array
-	max := arr[0]
-	for _, num := range arr {
-		if num > max {
-			max = num
+	iMenor := 0
+	iMaior := 0
+
+	for i := 0; i < sizeV; i++ {
+		if v[i] < v[iMenor] {
+			iMenor = i
+		}
+		if v[i] > v[iMaior] {
+			iMaior = i
 		}
 	}
 
-	// Criar um array de contagem e inicializá-lo com zeros
-	count := make([]int, max+1)
+	novoTam := v[iMaior] - v[iMenor] + 1
 
-	// Contar a ocorrência de cada elemento
-	for _, num := range arr {
-		count[num]++
+	contagem := make([]int, novoTam)
+
+	for i := 0; i < sizeV; i++ {
+		indiceContagem := v[i] - v[iMenor]
+		contagem[indiceContagem]++
 	}
 
-	// Atualizar o array de contagem com as posições corretas
-	for i := 1; i <= max; i++ {
-		count[i] += count[i-1]
+	for i := 1; i < novoTam; i++ {
+		contagem[i] += contagem[i-1]
 	}
 
-	// Criar um array temporário para armazenar os elementos ordenados
-	temp := make([]int, len(arr))
+	ordenado := make([]int, sizeV)
+	adicionado := make([]bool, sizeV)
 
-	// Colocar os elementos na posição correta no array temporário
-	for _, num := range arr {
-		temp[count[num]-1] = num
-		count[num]--
+	for i := 0; i < sizeV; i++ {
+		indiceOrdenado := contagem[v[i]-v[iMenor]] - 1
+		for adicionado[indiceOrdenado] {
+			indiceOrdenado--
+		}
+		ordenado[indiceOrdenado] = v[i]
+		adicionado[indiceOrdenado] = true
 	}
 
-	// Copiar os elementos ordenados de volta para o array original
-	for i, num := range temp {
-		arr[i] = num
+	for i := 0; i < sizeV; i++ {
+		v[i] = ordenado[i]
 	}
 }
 
