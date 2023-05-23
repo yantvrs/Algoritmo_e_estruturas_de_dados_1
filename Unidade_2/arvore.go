@@ -59,6 +59,26 @@ func (bstNode *BstNode) Println() {
 
 // pre e pos
 
+func (bstNode *BstNode) Height() int {
+    htLeft = 0
+    htRight = 0
+    
+    if bstNode.left != nil {
+        htLeft = bstNode.left.Height()
+    }
+    if bstNode.right != nil {
+        htRight = bstNode.right.Height()
+    }
+    
+    if htLeft >= htRight {
+        return 1 + htLeft
+    } else {
+        return 1 + htRight
+    }
+}
+
 func main() {
     fmt.Println("Hello world!")
 }
+
+
