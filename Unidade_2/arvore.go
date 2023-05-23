@@ -76,10 +76,10 @@ func (bstNode *BstNode) Height() int {
     htRightBasis = 0
     
     if bstNode.left != nil {
-        htLeftBasis = bstNode.left.Height()
+        htLeftBasis = 1 + bstNode.left.Height()
     }
     if bstNode.right != nil {
-        htRightBasis = bstNode.right.Height()
+        htRightBasis = 1 + bstNode.right.Height()
     }
     
     if htLeftBasis >= htRightBasis {
