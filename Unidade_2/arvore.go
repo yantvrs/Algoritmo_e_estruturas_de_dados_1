@@ -48,6 +48,33 @@ func (bstNode *BstNode) Search(value int) boot{
     }
 }
 
+func FindMin(root *BstNode) int {
+	if root == nil {
+		panic("A árvore está vazia.")
+	}
+
+	current := root
+	for current.left != nil {
+		current = current.left
+	}
+
+	return current.value
+}
+
+func FindMax(root *BstNode) int {
+	if root == nil {
+		panic("A árvore está vazia.")
+	}
+
+	current := root
+	for current.right != nil {
+		current = current.right
+	}
+
+	return current.value
+}
+
+
 func (bstNode *BstNode) Min() int {
     if bstNode.left == nil {
         return bstNode.value
