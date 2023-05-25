@@ -172,3 +172,68 @@ Desvantagens do Counting Sort:
 
 O Counting Sort é uma opção eficiente para ordenação quando o intervalo dos valores é conhecido e limitado. É amplamente utilizado em aplicações onde o desempenho é crítico e o intervalo dos valores permite um uso eficiente de memória.
 
+# Árvore Binária de Busca
+
+Uma árvore binária de busca é uma estrutura de dados em forma de árvore, na qual cada nó possui no máximo dois filhos. Ela possui a propriedade de que para cada nó, todos os valores nos filhos da subárvore esquerda são menores do que o valor do nó, e todos os valores nos filhos da subárvore direita são maiores.
+
+## Estrutura de um Nó
+
+Cada nó em uma árvore binária de busca contém as seguintes informações:
+- Valor do nó.
+- Ponteiro para o filho esquerdo.
+- Ponteiro para o filho direito.
+
+## Funções da Árvore Binária de Busca
+
+### Add (Inserir)
+
+A função `Add` é utilizada para inserir um novo valor na árvore. Ela percorre a árvore de forma recursiva, comparando o valor a ser inserido com o valor do nó atual. Se o valor for menor, ele é inserido na subárvore esquerda; se for maior, ele é inserido na subárvore direita. Se o valor já existir na árvore, ele não será inserido novamente.
+
+### Search (Buscar)
+
+A função `Search` é utilizada para buscar um valor na árvore. Ela percorre a árvore de forma recursiva, comparando o valor buscado com o valor do nó atual. Se o valor for igual, o nó é encontrado e a função retorna verdadeiro. Se o valor for menor, a busca continua na subárvore esquerda; se for maior, a busca continua na subárvore direita. Se o valor não for encontrado em nenhum nó, a função retorna falso.
+
+### Min (Mínimo) e Max (Máximo)
+
+As funções `Min` e `Max` são utilizadas para encontrar o valor mínimo e o valor máximo na árvore, respectivamente. O valor mínimo é encontrado percorrendo a árvore pela subárvore esquerda até encontrar um nó sem filho esquerdo. O valor máximo é encontrado percorrendo a árvore pela subárvore direita até encontrar um nó sem filho direito.
+
+### PrintPre (Pré-ordem), PrintIn (Em-ordem) e PrintPos (Pós-ordem)
+
+As funções `PrintPre`, `PrintIn` e `PrintPos` são utilizadas para imprimir os valores da árvore em diferentes ordens de percurso: pré-ordem, em-ordem e pós-ordem, respectivamente. 
+
+- Pré-ordem: imprime o valor do nó atual antes de imprimir os valores dos filhos (raiz-esquerda-direita).
+- Em-ordem: imprime o valor do nó atual entre a impressão dos valores dos filhos (esquerda-raiz-direita), resultando em uma impressão em ordem crescente quando a árvore está ordenada.
+- Pós-ordem: imprime o valor do nó atual após a impressão dos valores dos filhos (esquerda-direita-raiz).
+
+### PrintLevels (Impressão por níveis)
+
+A função `PrintLevels` é utilizada para imprimir os valores da árvore por níveis, ou seja, imprime os valores dos nós de cada nível antes de passar para o próximo nível. Ela utiliza uma fila para percorrer os nós por níveis.
+
+### Height (Altura)
+
+A função `Height` é utilizada para calcular a altura da árvore, ou seja, o número máximo de arestas entre a raiz e as folhas. Ela percorre a árvore de forma recursiva, calculando a altura das subárvores esquerda e direita, e retorna o máximo entre essas alturas mais 1.
+
+### Remove (Remover)
+
+A função `Remove` é utilizada para remover um valor específico da árvore. Ela percorre a árvore de forma recursiva, buscando o nó que contém o valor a ser removido. Existem três casos possíveis:
+
+1. O nó não tem filhos: basta remover o nó da árvore.
+2. O nó tem apenas um filho: substitui o nó pelo seu único filho.
+3. O nó tem dois filhos: encontra o sucessor (o menor valor na subárvore direita) ou o predecessor (o maior valor na subárvore esquerda), substitui o valor do nó a ser removido pelo valor do sucessor ou predecessor, e então remove o sucessor ou predecessor da subárvore correspondente.
+
+## Complexidade de Tempo
+
+A complexidade de tempo das operações em uma árvore binária de busca depende da altura da árvore. Em uma árvore balanceada, a altura é aproximadamente logarítmica em relação ao número de nós, o que resulta em um desempenho eficiente para as operações. No entanto, em uma árvore desbalanceada, a altura pode ser linear, o que leva a um desempenho pior.
+
+## Vantagens e Desvantagens
+
+Vantagens da Árvore Binária de Busca:
+- Inserção, busca e remoção eficientes em árvores balanceadas.
+- Possibilidade de imprimir os valores em diferentes ordens e por níveis.
+- Estrutura de dados flexível e versátil.
+
+Desvantagens da Árvore Binária de Busca:
+- A complexidade de tempo pode ser pior caso a árvore fique desbalanceada.
+- Requer a implementação correta das operações para garantir a propriedade da árvore binária de busca.
+
+A árvore binária de busca é uma estrutura de dados fundamental em ciência da computação, utilizada em diversos algoritmos e aplicações. Sua eficiência depende da correta implementação e do balanceamento da árvore.
