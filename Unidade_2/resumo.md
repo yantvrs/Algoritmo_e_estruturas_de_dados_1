@@ -99,7 +99,37 @@ Desvantagens do Merge Sort:
 
 O Merge Sort é um algoritmo poderoso de ordenação, especialmente para grandes conjuntos de dados. Sua complexidade de tempo garantida e estabilidade o tornam uma escolha popular em muitas aplicações.
 
+# Quick Sort
+
+O Quick Sort é um algoritmo de ordenação eficiente que utiliza a estratégia "dividir para conquistar". Ele seleciona um elemento chamado de "pivô" e rearranja a lista de forma que todos os elementos menores que o pivô estejam à sua esquerda, e os elementos maiores estejam à sua direita. Em seguida, aplica recursivamente o Quick Sort nas duas sublistas resultantes.
+
+## Funcionamento do Quick Sort
+
+O Quick Sort segue os seguintes passos:
+
+1. Seleciona um elemento da lista como pivô. Existem várias estratégias para escolher o pivô, como selecionar o primeiro elemento, o último elemento ou um elemento aleatório.
+2. Reorganiza a lista de forma que todos os elementos menores que o pivô estejam à sua esquerda e todos os elementos maiores estejam à sua direita.
+3. Aplica o Quick Sort recursivamente nas sublistas à esquerda e à direita do pivô.
+
+Esse processo é repetido até que cada sublista contenha apenas um elemento, resultando em uma lista totalmente ordenada.
 
 
+## Complexidade de Tempo
 
+A complexidade de tempo do Quick Sort é em média O(n log n), onde n é o número de elementos na lista a ser ordenada. No entanto, em pior caso, o Quick Sort pode ter uma complexidade quadrática de O(n^2) quando o pivô escolhido não divide a lista de forma balanceada. Para evitar isso, são usadas técnicas como escolher o pivô de forma aleatória ou usar o método de mediana de três.
+
+O Quick Sort é amplamente utilizado devido à sua eficiência média e desempenho geralmente superior a outros algoritmos de ordenação, como o Bubble Sort ou o Insertion Sort.
+
+## Vantagens e Desvantagens
+
+Vantagens do Quick Sort:
+- Eficiente para listas grandes e desordenadas.
+- Complexidade de tempo média de O(n log n).
+- Em geral, possui um desempenho superior a outros algoritmos de ordenação.
+
+Desvantagens do Quick Sort:
+- A complexidade de tempo pior caso pode ser O(n^2) se não forem aplicadas estratégias para escolher o pivô.
+- Não é um algoritmo estável, ou seja, a ordem relativa de elementos iguais não é necessariamente preservada.
+
+O Quick Sort é um dos algoritmos de ordenação mais populares e amplamente utilizados. Sua eficiência
 
