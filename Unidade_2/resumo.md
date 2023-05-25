@@ -65,5 +65,41 @@ Desvantagens do Insertion Sort:
 
 O Insertion Sort é um algoritmo de ordenação útil em certos cenários, especialmente quando a lista é pequena ou quase ordenada. No entanto, para listas maiores e menos ordenadas, algoritmos mais eficientes, como o Merge Sort ou Quick Sort, são geralmente preferidos.
 
+# Merge Sort
+
+O Merge Sort é um algoritmo de ordenação eficiente que utiliza a estratégia "dividir para conquistar". Ele divide repetidamente a lista não ordenada em sublistas menores, ordena essas sublistas e, em seguida, mescla-as para obter uma lista ordenada.
+
+## Funcionamento do Merge Sort
+
+O Merge Sort segue os seguintes passos:
+
+1. Divide a lista não ordenada em duas sublistas de tamanho aproximadamente igual.
+2. Recursivamente, ordena cada sublista aplicando o Merge Sort.
+3. Mescla as duas sublistas ordenadas para produzir uma lista única e ordenada.
+
+Esse processo de divisão e mesclagem é repetido até que a lista esteja completamente ordenada.
+
+
+## Complexidade de Tempo
+
+A complexidade de tempo do Merge Sort é O(n log n), onde n é o número de elementos na lista a ser ordenada. Isso ocorre porque o algoritmo divide a lista ao meio em cada etapa de recursão e combina as sublistas de forma eficiente.
+
+O Merge Sort é conhecido por sua eficiência em listas grandes e é amplamente utilizado na prática. Comparado a algoritmos de complexidade quadrática, como o Bubble Sort ou o Insertion Sort, o Merge Sort apresenta um desempenho muito melhor.
+
+## Vantagens e Desvantagens
+
+Vantagens do Merge Sort:
+- Eficiente para listas grandes e desordenadas.
+- Complexidade de tempo garantida de O(n log n).
+- É um algoritmo estável, preservando a ordem relativa de elementos iguais.
+
+Desvantagens do Merge Sort:
+- Requer memória adicional para a mesclagem de sublistas.
+- Implementação mais complexa do que algoritmos de ordenação mais simples, como o Bubble Sort.
+
+O Merge Sort é um algoritmo poderoso de ordenação, especialmente para grandes conjuntos de dados. Sua complexidade de tempo garantida e estabilidade o tornam uma escolha popular em muitas aplicações.
+
+
+
 
 
