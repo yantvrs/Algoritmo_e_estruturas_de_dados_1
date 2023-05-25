@@ -133,3 +133,42 @@ Desvantagens do Quick Sort:
 
 O Quick Sort é um dos algoritmos de ordenação mais populares e amplamente utilizados. Sua eficiência
 
+# Counting Sort
+
+O Counting Sort é um algoritmo de ordenação eficiente utilizado para ordenar elementos quando o intervalo dos valores é conhecido e relativamente pequeno. Ele conta o número de ocorrências de cada elemento na lista original e, em seguida, reconstrói a lista ordenada com base nas contagens acumuladas.
+
+## Funcionamento do Counting Sort
+
+O Counting Sort segue os seguintes passos:
+
+1. Encontra o valor máximo (max) na lista original.
+2. Cria um array de contagem (count) de tamanho (max+1), inicializado com zeros.
+3. Conta o número de ocorrências de cada elemento na lista original e armazena as contagens no array de contagem.
+4. Calcula as contagens acumuladas, onde cada elemento do array de contagem é a soma das contagens anteriores.
+5. Cria um array auxiliar (sorted) do mesmo tamanho que a lista original.
+6. Percorre a lista original e, para cada elemento, insere-o na posição correta no array auxiliar com base nas contagens acumuladas.
+7. A lista ordenada é obtida a partir do array auxiliar.
+
+## Pseudocódigo
+
+Aqui está o pseudocódigo do algoritmo Counting Sort:
+
+
+## Complexidade de Tempo
+
+A complexidade de tempo do Counting Sort é O(n + k), onde n é o número de elementos na lista original e k é o intervalo dos valores. O Counting Sort tem um desempenho linear, tornando-o um algoritmo eficiente em muitos cenários, especialmente quando o intervalo dos valores é relativamente pequeno.
+
+## Vantagens e Desvantagens
+
+Vantagens do Counting Sort:
+- Eficiente para listas com intervalo de valores pequeno.
+- Desempenho linear O(n + k).
+- Não requer comparações entre os elementos.
+
+Desvantagens do Counting Sort:
+- Requer memória adicional para o array de contagem.
+- Não é adequado para listas com valores negativos ou intervalos muito grandes.
+- Não é um algoritmo estável, ou seja, a ordem relativa de elementos iguais não é necessariamente preservada.
+
+O Counting Sort é uma opção eficiente para ordenação quando o intervalo dos valores é conhecido e limitado. É amplamente utilizado em aplicações onde o desempenho é crítico e o intervalo dos valores permite um uso eficiente de memória.
+
