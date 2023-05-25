@@ -31,4 +31,39 @@ Desvantagens do Selection Sort:
 
 O Selection Sort é uma forma básica de ordenação e é útil para ensinar os conceitos fundamentais de algoritmos de classificação. No entanto, para aplicações práticas, existem algoritmos mais eficientes disponíveis.
 
+# Insertion Sort
+
+O Insertion Sort é um algoritmo de ordenação simples que consiste em construir uma lista ordenada à medida que os elementos são inseridos. Ele percorre a lista da esquerda para a direita, inserindo cada elemento na posição correta em relação aos elementos já ordenados.
+
+## Funcionamento do Insertion Sort
+
+1. Inicialmente, considera-se o primeiro elemento da lista como uma lista ordenada.
+2. Para cada elemento subsequente, encontra-se a posição correta na lista ordenada para inserir esse elemento.
+3. Move-se todos os elementos maiores do que o elemento a ser inserido uma posição à frente para abrir espaço.
+4. Insere-se o elemento na posição correta.
+
+O algoritmo continua esse processo até que todos os elementos da lista sejam inseridos em suas posições corretas.
+
+
+## Complexidade de Tempo
+
+A complexidade de tempo do Insertion Sort é O(n^2), onde n é o número de elementos na lista a ser ordenada. Isso ocorre porque, em média, o algoritmo precisa percorrer metade da lista para inserir um novo elemento.
+
+Embora tenha uma complexidade quadrática, o Insertion Sort é eficiente para listas pequenas ou quase ordenadas, pois requer menos comparações e trocas do que outros algoritmos mais complexos.
+
+## Vantagens e Desvantagens
+
+Vantagens do Insertion Sort:
+- Implementação simples e fácil de entender.
+- Eficiente para listas pequenas ou quase ordenadas.
+- Requer um número mínimo de trocas quando a lista está parcialmente ordenada.
+
+Desvantagens do Insertion Sort:
+- Desempenho relativamente lento para listas grandes ou completamente desordenadas.
+- Não é estável, ou seja, a ordem relativa de elementos iguais não é preservada.
+- Requer uma quantidade fixa de comparações mesmo quando a lista está parcialmente ordenada.
+
+O Insertion Sort é um algoritmo de ordenação útil em certos cenários, especialmente quando a lista é pequena ou quase ordenada. No entanto, para listas maiores e menos ordenadas, algoritmos mais eficientes, como o Merge Sort ou Quick Sort, são geralmente preferidos.
+
+
 
