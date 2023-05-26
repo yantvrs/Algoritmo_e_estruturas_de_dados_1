@@ -1,4 +1,6 @@
-## Complexidade de tempo dos algoritmos de ordenação
+# Complexidade de tempo dos algoritmos de ordenação
 
-# Selection Sort
+## Selection Sort
+
+### Pior caso
 
