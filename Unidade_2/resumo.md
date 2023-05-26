@@ -31,6 +31,38 @@ Desvantagens do Selection Sort:
 
 O Selection Sort é uma forma básica de ordenação e é útil para ensinar os conceitos fundamentais de algoritmos de classificação. No entanto, para aplicações práticas, existem algoritmos mais eficientes disponíveis.
 
+# Bubble Sort
+
+O Bubble Sort é um algoritmo de ordenação simples e ineficiente. Ele compara repetidamente pares de elementos adjacentes e os troca se estiverem na ordem errada. O algoritmo percorre a lista várias vezes, movendo o maior elemento para a posição correta a cada iteração. Esse processo é repetido até que a lista esteja completamente ordenada.
+
+## Funcionamento do Bubble Sort
+
+O Bubble Sort segue os seguintes passos:
+
+1. Começa percorrendo a lista do início ao fim.
+2. Compara o elemento atual com o próximo elemento.
+3. Se o elemento atual for maior do que o próximo elemento, realiza a troca.
+4. Continua percorrendo a lista até o penúltimo elemento.
+5. Repete os passos 2 a 4 para cada iteração até que nenhuma troca seja realizada em uma iteração completa, indicando que a lista está ordenada.
+
+
+## Complexidade de Tempo
+
+A complexidade de tempo do Bubble Sort é O(n^2), onde n é o número de elementos na lista. Isso ocorre porque o algoritmo precisa percorrer a lista várias vezes, comparando pares de elementos adjacentes e realizando trocas. Mesmo em sua forma otimizada, o Bubble Sort ainda possui um desempenho ineficiente para listas grandes.
+
+## Vantagens e Desvantagens
+
+Vantagens do Bubble Sort:
+- Implementação simples e fácil de entender.
+- Funciona bem para listas pequenas ou quase ordenadas.
+
+Desvantagens do Bubble Sort:
+- Complexidade de tempo quadrática O(n^2).
+- Desempenho ineficiente para listas grandes ou desordenadas.
+- Não é estável, ou seja, a ordem relativa de elementos iguais pode ser alterada.
+
+O Bubble Sort é considerado um dos algoritmos de ordenação mais simples, mas também um dos menos eficientes. É mais adequado para fins educacionais ou para ordenar pequenas quantidades de dados quando a simplicidade e clareza são mais importantes do que o desempenho.
+
 # Insertion Sort
 
 O Insertion Sort é um algoritmo de ordenação simples que consiste em construir uma lista ordenada à medida que os elementos são inseridos. Ele percorre a lista da esquerda para a direita, inserindo cada elemento na posição correta em relação aos elementos já ordenados.
