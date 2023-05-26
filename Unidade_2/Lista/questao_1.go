@@ -193,38 +193,47 @@ func countingSort(v []int) {
 
 
 func main() {
-	fmt.Println("Algoritmos de ordenação\nVetor desordenado:")
-	
+	fmt.Println("Algoritmos de ordenação")
+
 	array := []int{9, 2, 5, 6, 7, 8, 4, 1, 3}
-	fmt.Println("\nVetor desordenado:", array)
+	fmt.Println("Vetor desordenado:", array)
 
-	
-	alternativa := "d"
-
+	alternativa := "f"
 
 	if alternativa == "a" {
-		// a)
+		// a) SelectionSort
 		fmt.Println("\nSelectionSort:")
 		SelectionSort(array)
-		fmt.Println("Ordenado: ", array)
+		fmt.Println("Ordenado:", array)
 	}
 	if alternativa == "b" {
-		// b) 
+		// b) BubbleSort
 		fmt.Println("\nBubbleSort:")
 		BubbleSort(array)
-		fmt.Println("Ordenado: ", array)
+		fmt.Println("Ordenado:", array)
 	}
 	if alternativa == "c" {
-		// c) 
+		// c) InsertionSort
 		fmt.Println("\nInsertionSort:")
 		InsertionSort(array)
-		fmt.Println("Ordenado: ", array)
+		fmt.Println("Ordenado:", array)
 	}
 	if alternativa == "d" {
-		// d) 
+		// d) MergeSort
 		fmt.Println("\nMergeSort:")
 		MergeSort(array, 0, len(array)-1)
-		fmt.Println("Ordenado: ", array)
+		fmt.Println("Ordenado:", array)
 	}
-
+	if alternativa == "e" {
+		// e) QuickSort
+		fmt.Println("\nQuickSort:")
+		quicksort(array, 0, len(array)-1)
+		fmt.Println("Ordenado:", array)
+	}
+	if alternativa == "f" {
+		// f) CountingSort
+		fmt.Println("\nCountingSort:")
+		countingSort(array)
+		fmt.Println("Ordenado:", array)
+	}
 }
