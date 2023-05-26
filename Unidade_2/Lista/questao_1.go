@@ -143,6 +143,7 @@ func quicksort(arr []int, low, high int) {
 		quicksort(arr, pivot+1, high)
 	}
 
+}
 
 // f)CoutingSort
 func countingSort(v []int) {
