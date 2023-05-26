@@ -2,5 +2,7 @@
 
 ## Selection Sort
 
-### Pior caso
+### Pior caso:
+
+### Melhor caso:
 
