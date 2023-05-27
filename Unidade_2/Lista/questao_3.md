@@ -362,3 +362,46 @@ Reorganizamos os elementos menores que o pivô à sua esquerda e os maiores ou i
 Neste ponto, a parte direita do vetor está completamente ordenada.
 
 Ao finalizar todos os passos, temos o vetor [1, 2, 3, 3, 4, 5, 6, 7] completamente ordenado usando o algoritmo QuickSort com randomização do pivô.
+
+### g.CountingSort
+    i. vetor para ilustrar : aleatório
+
+O algoritmo de ordenação Counting Sort é um algoritmo eficiente para ordenar elementos quando o intervalo de valores possíveis é conhecido e relativamente pequeno. Vamos ilustrar o funcionamento do algoritmo Counting Sort para o vetor [3, 6, 2, 5, 4, 3, 7, 1, 10^9]:
+
+Passo 1: Encontrar o intervalo dos valores
+Primeiro, percorremos o vetor para determinar o menor e o maior valor presente. No caso, o menor valor é 1 e o maior valor é 10^9 (um bilhão).
+
+Passo 2: Criar um vetor auxiliar de contagem
+Criamos um vetor auxiliar de contagem com tamanho igual ao intervalo dos valores + 1. Nesse caso, o vetor terá tamanho 10^9 + 1.
+
+Passo 3: Contar a ocorrência de cada elemento
+Percorremos o vetor original e incrementamos o valor correspondente no vetor auxiliar de contagem. Por exemplo, encontramos o número 3 e incrementamos o valor na posição 3 do vetor auxiliar.
+
+Vetor auxiliar de contagem: [0, 1, 1, 2, 1, 1, 1, 1, 0, ..., 0]
+
+Passo 4: Calcular as posições finais
+Agora, percorremos o vetor auxiliar de contagem e acumulamos os valores para obter as posições finais de cada elemento. Por exemplo, se o valor na posição 3 do vetor auxiliar for 2, isso significa que haverá dois elementos menores ou iguais a 3 na posição final.
+
+Vetor auxiliar de contagem: [0, 1, 2, 4, 5, 6, 7, 8, 8, ..., 8]
+
+Passo 5: Criar o vetor ordenado
+Criamos um vetor auxiliar de tamanho igual ao vetor original para armazenar os elementos ordenados.
+
+Vetor auxiliar: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+
+Passo 6: Preencher o vetor ordenado
+Percorremos o vetor original novamente e, para cada elemento, encontramos sua posição final com base no vetor auxiliar de contagem. Colocamos o elemento na posição final e decrementamos o valor correspondente no vetor auxiliar.
+
+Vetor auxiliar de contagem: [0, 0, 1, 3, 4, 5, 6, 7, 8, ..., 8]
+Vetor auxiliar: [0, 1, 2, 3, 4, 5, 6, 7, 1, ..., 0]
+
+Vetor auxiliar: [1, 1, 2, 3, 4, 5, 6, 7, 1, ..., 0]
+
+Passo 7: Obter o vetor ordenado
+Agora, o vetor auxiliar contém os elementos ordenados.
+
+Vetor auxiliar: [1, 1, 2, 3, 4, 5, 6, 7, 1, ..., 0]
+
+Portanto, o vetor [3, 6, 2, 5, 4, 3, 7, 1, 10^9] é orden
+
+ado para [1, 1, 2, 3, 3, 4, 5, 6, 7, 10^9] usando o algoritmo Counting Sort.
