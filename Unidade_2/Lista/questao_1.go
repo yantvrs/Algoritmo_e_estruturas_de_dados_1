@@ -195,10 +195,10 @@ func countingSort(v []int) {
 func main() {
 	fmt.Println("Algoritmos de ordenação")
 
-	array := []int{9, 2, 5, 6, 7, 8, 4, 1, 3}
+	array := []int{0,1,2,3,4,5,6,7,8,9}
 	fmt.Println("Vetor desordenado:", array)
 
-	alternativa := "f"
+	alternativa := "c"
 
 	if alternativa == "a" {
 		// a) SelectionSort
