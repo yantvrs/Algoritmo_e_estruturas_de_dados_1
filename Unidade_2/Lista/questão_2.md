@@ -24,6 +24,9 @@
 - Trocas : O(n^2)
 
 ### Melhor caso:
+- Vetor em ordem crescente
+- Comparações: O(n)
+- Trocas : zero
 
 ## MergeSort
 
