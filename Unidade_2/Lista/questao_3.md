@@ -219,3 +219,100 @@ Avançamos para o nono elemento (10^9) e o comparamos com o elemento anterior (7
 [1, 2, 3, 3, 4, 5, 6, 7, 10^9]
 
 Agora, o vetor está completamente ordenado em ordem crescente usando o algoritmo Insertion Sort.
+
+### d. MergeSort
+    i. vetor para ilustrar: decrescente
+
+O algoritmo de ordenação Merge Sort é um algoritmo de divisão e conquista que divide repetidamente a lista em metades menores, ordena cada metade separadamente e, em seguida, combina as metades ordenadas para obter a lista final ordenada.
+
+Aqui está o funcionamento passo a passo do algoritmo Merge Sort para o vetor [7, 6, 5, 4, 3, 3, 2, 1]:
+
+Passo 1: Divisão
+Dividimos o vetor original em metades menores até que cada subvetor contenha apenas um elemento.
+
+[7, 6, 5, 4, 3, 3, 2, 1] (Divisão 1)
+[7, 6, 5, 4] | [3, 3, 2, 1] (Divisão 2)
+[7, 6] | [5, 4] | [3, 3] | [2, 1] (Divisão 3)
+[7] | [6] | [5] | [4] | [3] | [3] | [2] | [1] (Divisão final)
+
+Passo 2: Combinação (Merge)
+Começamos combinando os subvetores ordenados em pares, mesclando-os em um único subvetor ordenado. Em seguida, repetimos o processo para combinar os subvetores maiores, até que tenhamos a lista final ordenada.
+
+[6, 7] | [4, 5] | [3, 3] | [1, 2] (Combinação 1)
+[4, 5, 6, 7] | [1, 2, 3, 3] (Combinação 2)
+[1, 2, 3, 3, 4, 5, 6, 7] (Combinação final)
+
+Agora, o vetor está completamente ordenado em ordem crescente usando o algoritmo Merge Sort.
+
+### e. QuickSort (sem randomização de pivô)
+    i. vetor para ilustrar: crescente
+
+Vamos ilustrar o funcionamento do algoritmo QuickSort para o vetor [1, 2, 3, 3, 4, 5, 6, 7] sem randomização do pivô. Nesse caso, vamos considerar o último elemento do vetor como pivô.
+
+Passo 1:
+Selecionamos o último elemento, 7, como pivô.
+[1, 2, 3, 3, 4, 5, 6, 7]
+
+Passo 2:
+Reorganizamos os elementos do vetor de forma que todos os elementos menores que o pivô fiquem à sua esquerda, e todos os elementos maiores ou iguais ao pivô fiquem à sua direita.
+[1, 2, 3, 3, 4, 5, 6, 7]
+
+Passo 3:
+Dividimos o vetor em duas partes com base na posição final do pivô.
+[1, 2, 3, 3] e [4, 5, 6, 7]
+
+Passo 4:
+Recursivamente aplicamos o algoritmo QuickSort nas duas partes do vetor.
+[1, 2, 3, 3] (parte esquerda)
+[4, 5, 6, 7] (parte direita)
+
+Passo 5:
+Para a parte esquerda, selecionamos o último elemento, 3, como pivô.
+[1, 2, 3, 3]
+
+Passo 6:
+Reorganizamos os elementos menores que o pivô à sua esquerda e os maiores ou iguais ao pivô à sua direita.
+[1, 2, 3, 3]
+
+Passo 7:
+Dividimos a parte esquerda do vetor em duas partes com base na posição final do pivô.
+[1, 2] e [3, 3]
+
+Passo 8:
+Recursivamente aplicamos o algoritmo QuickSort nas duas partes da parte esquerda do vetor.
+[1, 2] (parte esquerda)
+[3, 3] (parte direita)
+
+Passo 9:
+Para a parte esquerda da parte esquerda do vetor, selecionamos o primeiro elemento, 1, como pivô.
+[1, 2]
+
+Passo 10:
+Reorganizamos os elementos menores que o pivô à sua esquerda e os maiores ou iguais ao pivô à sua direita.
+[1, 2]
+
+Neste ponto, a parte esquerda da parte esquerda do vetor está completamente ordenada.
+
+Passo 11:
+Para a parte direita da parte esquerda do vetor, selecionamos o último elemento, 3, como pivô.
+[3, 3]
+
+Passo 12:
+Reorganizamos os elementos menores que o pivô à sua esquerda e os maiores ou iguais ao pivô à sua direita.
+[3, 3]
+
+Neste ponto, a parte direita da parte esquerda do vetor está completamente ordenada.
+
+Passo 13:
+Para a parte direita do vetor, selecionamos o último elemento, 7, como pivô.
+[4, 5, 6, 7]
+
+Passo 14:
+Reorganizamos os elementos menores que o pivô à sua esquerda e os maiores ou iguais ao pivô à sua direita.
+[4, 5, 6, 7]
+
+Neste ponto, a parte direita do
+
+ vetor está completamente ordenada.
+
+Ao finalizar todos os passos, temos o vetor [1, 2, 3, 3, 4, 5, 6, 7] completamente ordenado usando o algoritmo QuickSort.
