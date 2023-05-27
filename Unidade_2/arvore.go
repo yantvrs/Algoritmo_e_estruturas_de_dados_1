@@ -104,6 +104,10 @@ func (bstNode *BstNode) Height() int {
 	}
 }
 
+// Caso 1: Remoção no nó folha
+// Caso 2: Nó com um filho
+// Caso 3 : Remoção de nó com dois filhos
+
 func (bstNode *BstNode) Remove(value int) *BstNode {
 	if value < bstNode.value {
 		bstNode.left = bstNode.left.Remove(value)
