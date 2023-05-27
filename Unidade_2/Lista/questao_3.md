@@ -316,3 +316,49 @@ Neste ponto, a parte direita do
  vetor está completamente ordenada.
 
 Ao finalizar todos os passos, temos o vetor [1, 2, 3, 3, 4, 5, 6, 7] completamente ordenado usando o algoritmo QuickSort.
+
+### f. QuickSort (com randomização de pivô)
+    i. vetor para ilustrar: crescente
+
+O algoritmo QuickSort com randomização do pivô é uma variação do QuickSort tradicional que seleciona um pivô de forma aleatória a cada chamada recursiva. Essa randomização ajuda a evitar o pior caso de desempenho do QuickSort, melhorando a eficiência em média.
+
+Vamos ilustrar o funcionamento do algoritmo QuickSort com randomização do pivô para o vetor [1, 2, 3, 3, 4, 5, 6, 7]:
+
+Passo 1:
+Selecionamos um pivô aleatório do vetor. Por exemplo, escolhemos o valor 4 como pivô.
+[1, 2, 3, 3, 4, 5, 6, 7]
+
+Passo 2:
+Reorganizamos os elementos do vetor de forma que todos os elementos menores que o pivô fiquem à sua esquerda, e todos os elementos maiores ou iguais ao pivô fiquem à sua direita.
+[1, 2, 3, 3, 4, 5, 6, 7]
+
+Passo 3:
+Dividimos o vetor em duas partes com base na posição final do pivô.
+[1, 2, 3, 3] e [5, 6, 7]
+
+Passo 4:
+Recursivamente aplicamos o algoritmo QuickSort nas duas partes do vetor.
+[1, 2, 3, 3] (parte esquerda)
+[5, 6, 7] (parte direita)
+
+Passo 5:
+Para a parte esquerda, selecionamos um pivô aleatório. Por exemplo, escolhemos o valor 3 como pivô.
+[1, 2, 3, 3]
+
+Passo 6:
+Reorganizamos os elementos menores que o pivô à sua esquerda e os maiores ou iguais ao pivô à sua direita.
+[1, 2, 3, 3]
+
+Neste ponto, a parte esquerda do vetor está completamente ordenada.
+
+Passo 7:
+Para a parte direita, selecionamos um pivô aleatório. Por exemplo, escolhemos o valor 6 como pivô.
+[5, 6, 7]
+
+Passo 8:
+Reorganizamos os elementos menores que o pivô à sua esquerda e os maiores ou iguais ao pivô à sua direita.
+[5, 6, 7]
+
+Neste ponto, a parte direita do vetor está completamente ordenada.
+
+Ao finalizar todos os passos, temos o vetor [1, 2, 3, 3, 4, 5, 6, 7] completamente ordenado usando o algoritmo QuickSort com randomização do pivô.
