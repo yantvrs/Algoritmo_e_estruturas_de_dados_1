@@ -162,6 +162,9 @@ func (bstNode *BstNode) Size() int {
 	return count
 }
 
+// Questão 6) Escreva uma função que recebe um vetor contendo elementos desordenados e retorna uma BST balanceada.
+
+
 func main() {
 	fmt.Println("Binary Search Tree Example:")
 
