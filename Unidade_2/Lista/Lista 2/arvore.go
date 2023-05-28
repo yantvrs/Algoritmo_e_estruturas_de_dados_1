@@ -129,6 +129,39 @@ func (bstNode *BstNode) Remove(value int) *BstNode {
 	return bstNode
 }
 
+// Questão 4) Escreva uma função que identifique se uma árvore é uma BST.
+
+func (bstNode *BstNode) IsBst() bool {
+	if bstNode.left != nil {
+		if bstNode.value > bstNode.left.value {
+			return bstNode.left.IsBst()
+		} else {
+			return false
+		}
+	} else if bstNode.right != nil {
+		if bstNode.value < bstNode.right.value{
+			return bstNode.right.IsBst()
+		} else {
+			return false
+		}
+	}
+	return true
+}
+
+// Questão 5) Escreva uma função que retorna a quantidade de elementos de uma BST.
+
+func (bstNode *BstNode) Size() int {
+	count := 1
+
+	if bstNode.left != nil {
+		count += bstNode.left.Size()
+	}
+	if bstNode.right != nil {
+		count += bstNode.right.Size()
+	}
+	return count
+}
+
 func main() {
 	fmt.Println("Binary Search Tree Example:")
 
