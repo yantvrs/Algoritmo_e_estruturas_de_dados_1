@@ -114,33 +114,33 @@ func MergeSort(v []int, start int, end int) {
 // e)QuickSort(com randomização de pivô)
 
 
-func partition(arr []int, low, high int) int {
+func partition(v []int, low int, high int) int {
 	// Selecionar um pivô aleatório
 	randomIndex := rand.Intn(high-low+1) + low
-	arr[high], arr[randomIndex] = arr[randomIndex], arr[high]
+	v[high], v[randomIndex] = v[randomIndex], v[high]
 
-	pivot := arr[high]
+	pivot := v[high]
 	i := low - 1
 
 	for j := low; j < high; j++ {
-		if arr[j] <= pivot {
+		if v[j] <= pivot {
 			i++
-			arr[i], arr[j] = arr[j], arr[i]
+			v[i], v[j] = v[j], v[i]
 		}
 	}
 
-	arr[i+1], arr[high] = arr[high], arr[i+1]
+	v[i+1], v[high] = v[high], v[i+1]
 	return i + 1
 }
 
-func quicksort(arr []int, low, high int) {
+func quicksort(v []int, low int, high int) {
 	if low < high {
 		// Encontrar o índice de partição
-		pivot := partition(arr, low, high)
+		pivot := partition(v, low, high)
 
 		// Ordenar recursivamente as duas metades
-		quicksort(arr, low, pivot-1)
-		quicksort(arr, pivot+1, high)
+		quicksort(v, low, pivot-1)
+		quicksort(v, pivot+1, high)
 	}
 
 }
@@ -149,25 +149,24 @@ func quicksort(arr []int, low, high int) {
 func countingSort(v []int) {
 	sizeV := len(v)
 
-	iMenor := 0
-	iMaior := 0
-
-	for i := 0; i < sizeV; i++ {
-		if v[i] < v[iMenor] {
-			iMenor = i
+	menor := v[0]
+	maior := v[0]
+	
+	for i := 1; i < sizeV; i++ {
+		if v[i] < menor {
+			menor = v[i]
 		}
-		if v[i] > v[iMaior] {
-			iMaior = i
+		if v[i] > maior {
+			maior = v[i]
 		}
 	}
 
-	novoTam := v[iMaior] - v[iMenor] + 1
+	novoTam := maior - menor + 1
 
 	contagem := make([]int, novoTam)
 
 	for i := 0; i < sizeV; i++ {
-		indiceContagem := v[i] - v[iMenor]
-		contagem[indiceContagem]++
+		contagem[v[i]-menor]++
 	}
 
 	for i := 1; i < novoTam; i++ {
@@ -175,15 +174,9 @@ func countingSort(v []int) {
 	}
 
 	ordenado := make([]int, sizeV)
-	adicionado := make([]bool, sizeV)
 
 	for i := 0; i < sizeV; i++ {
-		indiceOrdenado := contagem[v[i]-v[iMenor]] - 1
-		for adicionado[indiceOrdenado] {
-			indiceOrdenado--
-		}
-		ordenado[indiceOrdenado] = v[i]
-		adicionado[indiceOrdenado] = true
+		ordenado[contagem[v[i]-menor]-1] = v[i]
 	}
 
 	for i := 0; i < sizeV; i++ {
@@ -195,10 +188,10 @@ func countingSort(v []int) {
 func main() {
 	fmt.Println("Algoritmos de ordenação")
 
-	array := []int{0,1,2,3,4,5,6,7,8,9}
+	array := []int{9,8,6,5,3,2,0,4,1,7}
 	fmt.Println("Vetor desordenado:", array)
 
-	alternativa := "c"
+	alternativa := "e"
 
 	if alternativa == "a" {
 		// a) SelectionSort

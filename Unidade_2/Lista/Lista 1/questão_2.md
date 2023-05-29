@@ -29,7 +29,7 @@ Não é muito adequado para grande conjuntos de dados.
 - Durante as interações, o algoritmo apenas compara  os elementos adjacentes.
 - O(n)
 
-Em suma, o Bubble Sort é considerado um algoritmo relativamente lente em comparação com outras opções de ordenação mais eficientes, como o Quick Sort ou o Merge Sort.
+Em suma, o Bubble Sort é considerado um algoritmo relativamente lento em comparação com outras opções de ordenação mais eficientes, como o Quick Sort ou o Merge Sort.
 
 
 ## InsertionSort
