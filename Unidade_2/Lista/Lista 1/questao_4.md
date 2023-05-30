@@ -5,7 +5,7 @@ A. Para vetores de tamanho pequeno, a performance da maioria dos algoritmos de o
     a. Sugestão: um algoritmo O(n²), um algoritmo O(nlogn), e como exceção um algoritmo O(k+n)
 
 Resposta: 
-Para verificar a afirmação A, que diz que para vetores de tamanho pequeno a performance da maioria dos algoritmos de ordenação não vai influenciar, independente da disposição dos elementos, podemos realizar experimentos comparando três algoritmos de ordenação: um algoritmo O(n²), um algoritmo O(nlogn) e um algoritmo O(k+n), onde k é um valor constante.
+Para vetores de tamanho pequeno, a maioria dos algoritmos de ordenação terá um desempenho similar e a disposição dos elementos não terá um impacto significativo na performance. No entanto, algoritmos como o InsertionSort e BubbleSort podem se destacar em casos de vetores quase ordenados, enquanto o QuickSort pode apresentar desempenho inferior nesses cenários.
 
 B.Vetor de tamanho grande, a performance do algoritmo influencia de forma significativa. Além disso, dependendo da disposição (e valores) dos elementos no vetor, podemos experimentar performances bem diferentes (melhor e pior caso).
     b.Sugestão: um algoritmo O(n²), um algoritmo O(nlogn), um algoritmo O(k+n)
