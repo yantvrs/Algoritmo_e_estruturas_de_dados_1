@@ -86,6 +86,25 @@ func (bstNode *BstNode) PrintPos() {
 	fmt.Printf("%d ", bstNode.value)
 }
 
+func (bstNode *BstNode) PrintLevels() {
+	queue := []*BstNode{}
+	queue = append(queue, bstNode)
+
+	for len(queue) > 0 {
+		atual := queue[0]
+		queue = queue[1:]
+		fmt.Print(atual.value, ", ")
+
+		if atual.left != nil {
+			queue = append(queue, atual.left)
+		}
+		if atual.right != nil {
+			queue = append(queue, atual.right)
+		}
+
+	}
+}
+
 func (bstNode *BstNode) Height() int {
 	htLeftBasis := 0
 	htRightBasis := 0
@@ -165,6 +184,22 @@ func (bstNode *BstNode) Size() int {
 // Questão 6) Escreva uma função que recebe um vetor contendo elementos desordenados e retorna uma BST balanceada.
 
 
+func createBst(v []int) *BstNode {
+	if len(v) == 0 {
+		return nil
+	}
+
+	middle:=len(v)/2
+
+	node := &BstNode{ value:v[middle],}
+
+	node.left = createBst(v[:middle])
+	node.right = createBst(v[middle+1:])
+
+	return node
+}
+
+
 func main() {
 	fmt.Println("Binary Search Tree Example:")
 
@@ -205,4 +240,5 @@ func main() {
 	fmt.Println("Inorder Traversal after removal:")
 	root.PrintIn()
 	fmt.Println()
+
 }
