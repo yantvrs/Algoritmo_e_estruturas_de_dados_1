@@ -185,6 +185,9 @@ func (bstNode *BstNode) Size() int {
 
 
 func createBst(v []int) *BstNode {
+
+	SelectionSort(v[]int)
+	
 	if len(v) == 0 {
 		return nil
 	}
