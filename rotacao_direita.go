@@ -13,6 +13,7 @@ import "fmt"
   
 Casos:
   Raiz        Raiz.left       Ação
+              (levemente)
 > Esquerda -> Esquerda    ->  raiz.RotDir()
   bf = -2     bf = -1
 > Esquerda -> Balanceada  ->  raiz.RotDir()
@@ -21,9 +22,14 @@ Casos:
                               caso 2: raiz.RotDir()
 
   Raiz        Raiz.right
-> Direita  -> Direita
-> Direita  -> Balanceada
-> Direita  -> Esquerda
+              (levemente)
+> Direita  -> Direita    ->  raiz.RotEsq()
+  bf = 2      bf = 1
+> Direita  -> Balanceada ->  raiz.RotEsq()
+  bf = 2      bf = 0
+> Direita  -> Esquerda   ->  caso 1: raiz.Right.RotDir()
+                             caso 2: raiz.RotEsq()
+  
   
   >> raiz.bf == -2 && raiz.left.bf <= 0 
      Levemente desbalanceada para a esquerda ou completa
