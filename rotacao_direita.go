@@ -45,6 +45,34 @@ type BstNode struct {
   right *BstNode
 }
 
+func (bstNode *BstNode) UpdateProperties() {
+    // atualizar altura
+    heightRight := 0 
+    heightLeft := 0
+    if bstNode.right != nil && bstNode.left != nil {
+        bstNode.height = 0 
+    }
+    else {
+        if bstNode.right != nil {
+            heightRight = bstNode.right.height
+        }
+        if bstNode.left != nil {
+            heightLeft = bstNode.left.height
+        }
+        if heightRight > heightLevel {
+            bstNode
+        }
+        if heightRight > heightLeft {
+            bstNode.height = 1 + heightRight
+        } else {
+            bstNode.height = 1 + heightLeft
+        }
+    }
+    
+    // atualizar bf
+    bstNode.bf = heightRight - heightLeft
+}
+
 func (bstNode *BstNode) RotationRight() BstNode{
   left := bstNode.left
   bstNode.left = bstNode.left.right
