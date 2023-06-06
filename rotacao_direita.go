@@ -2,6 +2,12 @@ package main
 
 import "fmt"
 
+/*
+  Desbalanceado: 
+  bf >= 2
+  bf <= - 2 
+*/
+
 type BstNode struct {
   left *BstNode
   value int
@@ -21,3 +27,5 @@ func (bstNode *BstNode) RotationLeft() BstNode{
   right.left = bstNode
   return right
 }
+
+
