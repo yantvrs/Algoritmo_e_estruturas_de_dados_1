@@ -75,15 +75,19 @@ func (bstNode *BstNode) UpdateProperties() {
 
 func (bstNode *BstNode) RotationRight() BstNode{
   left := bstNode.left
-  bstNode.left = bstNode.left.right
+  bstNode.left = left.right
   left.right = bstNode
+  bstNode.UpdateProperties()
+  left.UpdateProperties()
   return left
 }
 
 func (bstNode *BstNode) RotationLeft() BstNode{
   right := bstNode.right
-  bstNode.right = bstNode.right.left
+  bstNode.right = right.left
   right.left = bstNode
+  bstNode.UpdateProperties()
+  right.UpdateProperties()
   return right
 }
 
