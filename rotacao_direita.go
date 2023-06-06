@@ -9,7 +9,7 @@ import "fmt"
   
   Desbalanceado: 
   bf >= 2
-  bf <= - 2 
+  bf <= -2 
   
   Caso 1: Desbalanceado para a esquerda -> bf= -2 -> Rotaciona p/ direita
 */
