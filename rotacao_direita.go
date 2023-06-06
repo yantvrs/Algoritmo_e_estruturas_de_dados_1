@@ -8,10 +8,27 @@ import "fmt"
   bf = hr - hl
   
   Desbalanceado: 
-  bf >= 2
-  bf <= -2 
+  bf >= 1
+  bf <= -1
   
-  Caso 1: Desbalanceado para a esquerda -> bf= -2 -> Rotaciona p/ direita
+Casos:
+  Raiz        Raiz.left       Ação
+> Esquerda -> Esquerda    ->  raiz.RotDir()
+  bf = -2     bf = -1
+> Esquerda -> Balanceada  ->  raiz.RotDir()
+  bf = -2     bf = 1
+> Esquerda -> Direita     ->  caso 1: raiz.left.RotEsq()
+                              caso 2: raiz.RotDir()
+
+  Raiz        Raiz.right
+> Direita  -> Direita
+> Direita  -> Balanceada
+> Direita  -> Esquerda
+  
+  >> raiz.bf == -2 && raiz.left.bf <= 0 
+     Levemente desbalanceada para a esquerda ou completa
+     ação: raiz.rot.Dir()
+  
 */
 
 type BstNode struct {
