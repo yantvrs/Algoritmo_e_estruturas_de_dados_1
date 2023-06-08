@@ -3,9 +3,12 @@ package main
 import "fmt"
 
 /*
+  Árvores AVL
+    AVL é uma árvore de busca binária balanceada com relação à altura de suas subárvores
+      Uma árvore AVL verifica a altura das subárvores da esquerda e da direita, garantindo que essa diferença não seja maior que +/- 1
+    Esta diferença é seu Fator de balanceamento
+    bf = hr - hl
  
-  Fator de balanceamento é calculado através da diferença entre a altura da direita menos o da esquerda.
-  bf = hr - hl
   
   Desbalanceado: 
   bf >= 1
