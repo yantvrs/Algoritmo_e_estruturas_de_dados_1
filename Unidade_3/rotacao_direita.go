@@ -7,36 +7,18 @@ import "fmt"
     AVL é uma árvore de busca binária balanceada com relação à altura de suas subárvores
       Uma árvore AVL verifica a altura das subárvores da esquerda e da direita, garantindo que essa diferença não seja maior que +/- 1
     Esta diferença é seu Fator de balanceamento
-    bf = hr - hl
+      bf = hr - hl
  
-  
-  Desbalanceado: 
-  bf >= 1
-  bf <= -1
-  
-Casos:
-  Raiz        Raiz.left       Ação
-              (levemente)
-> Esquerda -> Esquerda    ->  raiz.RotDir()
-  bf = -2     bf = -1
-> Esquerda -> Balanceada  ->  raiz.RotDir()
-  bf = -2     bf = 1
-> Esquerda -> Direita     ->  caso 1: raiz.left.RotEsq()
-                              caso 2: raiz.RotDir()
+  Como balancear uma árvore? Algoritmo AVL
 
-  Raiz        Raiz.right
-              (levemente)
-> Direita  -> Direita    ->  raiz.RotEsq()
-  bf = 2      bf = 1
-> Direita  -> Balanceada ->  raiz.RotEsq()
-  bf = 2      bf = 0
-> Direita  -> Esquerda   ->  caso 1: raiz.Right.RotDir()
-                             caso 2: raiz.RotEsq()
-  
-  
-  >> raiz.bf == -2 && raiz.left.bf <= 0 
-     Levemente desbalanceada para a esquerda ou completa
-     ação: raiz.rot.Dir()
+  . Inserção na subárvore direita do filho à direita
+    > Solução: Rotação simples à esquerda
+  . Inserção na subárvore esquerda do filho à esquerda
+    > Solução: Rotação simples à direita
+  . Inserção na subárvore esquerda do filho à direita
+    > Solução: Rotação dupla direita-esquerda
+  . Inserção na subárvore direita do filho à esquerda
+    > Solução: Rotação dupla esquerda-direita
   
 */
 
@@ -54,8 +36,7 @@ func (bstNode *BstNode) UpdateProperties() {
     heightLeft := 0
     if bstNode.right != nil && bstNode.left != nil {
         bstNode.height = 0 
-    }
-    else {
+    } else {
         if bstNode.right != nil {
             heightRight = bstNode.right.height
         }
