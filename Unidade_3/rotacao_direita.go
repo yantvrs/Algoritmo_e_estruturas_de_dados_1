@@ -30,10 +30,6 @@ type BstNode struct {
   right *BstNode
 }
 
-
-
-
-// Obs.: Fazer mudanças na sintaxe
 func (bstNode *BstNode) UpdateProperties() {
     // atualizar altura
     heightRight := 0 
@@ -60,8 +56,6 @@ func (bstNode *BstNode) UpdateProperties() {
     // atualizar bf
     bstNode.bf = heightRight - heightLeft
 }
-
-Obs.: error: return left(sintaxe incorreta) 
 
 func (bstNode *BstNode) RotationRight() BstNode{
   left := bstNode.left
