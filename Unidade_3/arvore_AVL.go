@@ -88,3 +88,21 @@ func (bstNode *BstNode) Add( value int ) {
   }
   bstNode.UpdateProperties()
 }
+
+func (bstNode *BstNode) rebalanceLeftLeft() *BstNode {
+    return bstNode.RotationRight()
+}
+
+func (bstNode *BstNode) rebalanceLeftRight() *BstNode {
+    bstNode.left = bstNode.left.RotationLeft()
+    return bstNode.rebalanceLeftLeft()
+}
+
+func (bstNode *BstNode) rebalanceRightRight() *BstNode {
+    return bstNode.RotationLeft()
+}
+
+func (bstNode *BstNode) rebalanceRightLeft() *BstNode {
+    bstNode.right = bstNode.right.RotationRight()
+    return bstNode.rebalanceRightRight()
+}
