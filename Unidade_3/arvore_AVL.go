@@ -30,12 +30,24 @@ type BstNode struct {
   right *BstNode
 }
 
+func newNode(value int) *BstNode {
+	return &BstNode{
+		value: value,
+	}
+}
+
 func (bstNode *BstNode) RotationRight() BstNode{
   left := bstNode.left
   bstNode.left = left.right
   left.right = bstNode
-  bstNode.UpdateProperties()
-  left.UpdateProperties()
+  bstNode.UpdateProperties()func newNode(value int) *BstNode {
+	return &BstNode{
+		value: value,
+	}
+}
+  left.UpdateProperties()func (bstNode *BstNode) LeftLeft() *BstNode {
+    return bstNode.RotationRight()
+}
   return left
 }
 
@@ -73,7 +85,7 @@ func (bstNode *BstNode) UpdateProperties() {
 }
 
 func (bstNode *BstNode) Add( value int ) {
-    if value <= bstNode.value {
+  if value <= bstNode.value {
       if bstNode.left == nil {
           bstNode.left = NewNode(value:value)
       } else {
@@ -87,18 +99,24 @@ func (bstNode *BstNode) Add( value int ) {
       }
   }
   bstNode.UpdateProperties()
+  bstNode.Rebalance()
 }
 
-func (bstNode *BstNode) rebalanceLeftLeft() *BstNode {
+func (bstNode *BstNode) Rebalance() *BstNode {
+    // Left
+    if bstNode.bf <= -2 {
+        // Left-left
+
+func (bstNode *BstNode) RebalanceLeftLeft() *BstNode {
     return bstNode.RotationRight()
 }
 
-func (bstNode *BstNode) rebalanceLeftRight() *BstNode {
+func (bstNode *BstNode) RebalanceLeftRight() *BstNode {
     bstNode.left = bstNode.left.RotationLeft()
     return bstNode.rebalanceLeftLeft()
 }
 
-func (bstNode *BstNode) rebalanceRightRight() *BstNode {
+func (bstNode *BstNode) RebalanceRightRight() *BstNode {
     return bstNode.RotationLeft()
 }
 
