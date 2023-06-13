@@ -73,5 +73,18 @@ func (bstNode *BstNode) UpdateProperties() {
 }
 
 func (bstNode *BstNode) Add( value int ) {
-  
+    if value <= bstNode.value {
+      if bstNode.left == nil {
+          bstNode.left = NewNode(value:value)
+      } else {
+          bstNode.left.Add(value)
+      }
+  } else {
+      if bstNode.right == nil {
+          bstNode.right = NewNode(value:value)
+      } else {
+          bstNode.right.Add(value)
+      }
+  }
+  bstNode.UpdateProperties()
 }
