@@ -18,7 +18,6 @@ import "fmt"
   . Inserção na subárvore esquerda do filho à direita
     > Solução: Rotação dupla direita-esquerda
   . Inserção na subárvore direita do filho à esquerda
-
     > Solução: Rotação dupla esquerda-direita
   
 */
@@ -99,6 +98,7 @@ func (bstNode *BstNode) Add( value int ) {
           bstNode.right.Add(value)
       }
   }
+	
   bstNode.UpdateProperties()
   bstNode.Rebalance()
 }
