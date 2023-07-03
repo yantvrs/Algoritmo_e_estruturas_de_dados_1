@@ -9,3 +9,7 @@ type BstNode struct {
 	bf int 
 	right *BstNode
 }
+
+func (bstNode *BstNode) RotRight() *BstNode {
+	
+}
