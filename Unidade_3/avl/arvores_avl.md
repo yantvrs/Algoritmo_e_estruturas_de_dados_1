@@ -30,11 +30,10 @@
     - "Fator de balanceamento" ou "bf" 
     - Diferença nas alturas das sub-árvores "esquerda" e "direita" 
       - Se uma das sub-árvores não existir, sua altura será -1 
-      
 
 
 
- 
+
 
 
 
