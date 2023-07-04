@@ -26,6 +26,11 @@ type BstNode struct {
 	right  *BstNode
 }
 
+func NewNode(value int) *BstNode {
+	node := &BstNode{left: nil, value: value, height: 0, bf: 0, right: nil}
+	return node
+}
+
 func (bstNode *BstNode) RotRight() *BstNode {
 
 }
