@@ -31,6 +31,23 @@ func NewNode(value int) *BstNode {
 	return node
 }
 
-func (bstNode *BstNode) RotRight() *BstNode {
+func (bstNode *BstNode) 
 
+func (bstNode *BstNode) Add(value int) *BstNode {
+	if value <= bstNode.value {
+		if bstNode.left == nil {
+			bstNode.left = NewNode(value)
+		} else {
+			bstNode.left = bstNode.left.Add(value)
+		}
+	} else {
+		if bstNode.right == nil {
+			bstNode.right = NewNode(value)
+		} else {
+			bstNode.right = bstNode.right.Add(value)
+		}
+	}
+	bstNode.UpdateProperties()
+
+	return bstNode.Rebalance()
 }
