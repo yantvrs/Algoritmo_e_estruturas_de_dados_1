@@ -29,3 +29,36 @@
 
 "Função de hashing"
     - Função que espalha os elementos na tabela
+
+" Por que espalhar os elementos melhora a busca?
+    - Uma tabela hash permite a associação de "valores" a "chaves"
+    - "chave": parte da informação que compõe o elemento a ser inserido ou buscado na tabela 
+    - "valor" : é a posição (índice) onde o elemento se encontra no "array" que define a tabela
+
+    - Assim, a partir de uma "chave" podemos acessar de forma rápida uma determinada "posição" do "array"
+    - Na média, essa operação tem custo "O(1)"
+
+"Vantagens"
+    - alta eficiência na operação de busca
+    - tempo de busca é praticamente independente do número de "chaves" armazenadas na tabela 
+    - implementação simples
+
+"Desvantagens"
+    - alto custo para recuperar os elementos da tabela ordenados pela "chave". Nesse caso, é preciso ordenar a tabela 
+    - pior caso é "O(n)", sendo "n" o tamanho da tabela: alto número de "colisões"
+
+"Aplicações"
+    - busca de elementos em base de dados
+    - criptografia: MDS e família SHA(Secure Hash Algorithm)
+    - implementação da tabela de símbolos dos compiladores
+    - armazenamento de senhas com segurança: a senha não é armazenada no servidor, mas sim o resultado da função hash
+    - verificação de integridade de dados e autenticação de mensagens
+
+" Tabela Hash"
+    - Sua implementação utiliza uma estrutura similar a da "Lista Sequencial Estática"
+    - Utiliza uma "array para armazenar os elementos
+
+"Desvantagem"
+    - Necessitar que se defina o tamanho do array previamente.
+    - Isso limita o número de elementos que podemos armazenar.
+
