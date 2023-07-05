@@ -31,7 +31,7 @@ func NewNode(value int) *BstNode {
 	return node
 }
 
-func (bstNode *BstNode) 
+func (bstNode *BstNode) UpdateProperties
 
 func (bstNode *BstNode) Add(value int) *BstNode {
 	if value <= bstNode.value {

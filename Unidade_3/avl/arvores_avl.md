@@ -32,7 +32,23 @@
       - Se uma das sub-árvores não existir, sua altura será -1 
 
 
+# Tipos de rotação 
 
+"Rotação"
+- Operação básica para balanceamento da AVL 
+- Dois tipos de rotações "simples" e "duplas"
+
+"Simples"
+- O nó desbalanceado e seu filho estão no mesmo sentido da inclinação 
+
+"Duplas"
+- O nó está desbalanceado e seu filho estão inclinado no sentido inverso ao pai
+- Equivale a duas rotações "simples"
+
+- Existem 2 rotações "simples" e 2 "duplas"
+  - rotação a "direita e a "esquerda"
+
+  
 
 
 
