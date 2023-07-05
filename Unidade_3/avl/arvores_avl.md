@@ -48,19 +48,14 @@
 - Existem 2 rotações "simples" e 2 "duplas"
   - rotação a "direita e a "esquerda"
 
-  
-
-
-
-
   Como balancear uma árvore? Algoritmo AVL
 
   . Inserção na subárvore direita do filho à direita
-    > Solução: Rotação simples à esquerda
+    > Solução RR: Rotação simples à esquerda
   . Inserção na subárvore esquerda do filho à esquerda
-    > Solução: Rotação simples à direita
+    > Solução LL: Rotação simples à direita
   . Inserção na subárvore esquerda do filho à direita
-    > Solução: Rotação dupla direita-esquerda
+    > Solução RL: Rotação dupla direita-esquerda
   . Inserção na subárvore direita do filho à esquerda
-    > Solução: Rotação dupla esquerda-direita
+    > Solução LR: Rotação dupla esquerda-direita
   
