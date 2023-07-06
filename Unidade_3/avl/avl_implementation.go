@@ -32,7 +32,22 @@ func NewNode(value int) *BstNode {
 }
 
 
-
+/*
+    Search(value int) bool
+	Min() int
+	Max() int
+	PrintPre()
+	PrintIn()
+	PrintPos()
+	Height() int
+	Remove(value int) *BstNode
+	IsBst() bool
+	Size() int
+	RotRight() *BstNode
+	RotLeft() *BstNode
+	Rebalance() *BstNode
+	UpdateProperties()
+*/
 
 func (bstNode *BstNode) Add(value int) *BstNode {
 	if value < bstNode.value {
@@ -51,22 +66,7 @@ func (bstNode *BstNode) Add(value int) *BstNode {
 	bstNode.UpdateProperties()
 	return bstNode.Rebalance()
 }
-	/*
-    Search(value int) bool
-	Min() int
-	Max() int
-	PrintPre()
-	PrintIn()
-	PrintPos()
-	Height() int
-	Remove(value int) *BstNode
-	IsBst() bool
-	Size() int
-	RotRight() *BstNode
-	RotLeft() *BstNode
-	Rebalance() *BstNode
-	UpdateProperties()
-	*/
+	
 func (bstNode *BstNode) UpdateProperties() {
 	heightRight := 0
 	heightLeft := 0
