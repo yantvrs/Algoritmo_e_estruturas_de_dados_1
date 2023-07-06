@@ -31,6 +31,42 @@ func NewNode(value int) *BstNode {
 	return node
 }
 
+
+
+
+func (bstNode *BstNode) Add(value int) *BstNode {
+	if value < bstNode.value {
+		if bstNode.left == nil {
+			bstNode.left = NewNode(value)
+		} else {
+			bstNode.left = bstNode.left.Add(value)
+		}
+	} else {
+		if bstNode.right == nil {
+			bstNode.right = NewNode(value)
+		} else {
+			bstNode.right = bstNode.right.Add(value)
+		}
+	}
+	bstNode.UpdateProperties()
+	return bstNode.Rebalance()
+}
+	/*
+    Search(value int) bool
+	Min() int
+	Max() int
+	PrintPre()
+	PrintIn()
+	PrintPos()
+	Height() int
+	Remove(value int) *BstNode
+	IsBst() bool
+	Size() int
+	RotRight() *BstNode
+	RotLeft() *BstNode
+	Rebalance() *BstNode
+	UpdateProperties()
+	*/
 func (bstNode *BstNode) UpdateProperties() {
 	heightRight := 0
 	heightLeft := 0
@@ -50,23 +86,5 @@ func (bstNode *BstNode) UpdateProperties() {
 			bstNode.height = heightLeft + 1
 		}
 	}
-}
-
-func (bstNode *BstNode) Add(value int) *BstNode {
-	if value <= bstNode.value {
-		if bstNode.left == nil {
-			bstNode.left = NewNode(value)
-		} else {
-			bstNode.left = bstNode.left.Add(value)
-		}
-	} else {
-		if bstNode.right == nil {
-			bstNode.right = NewNode(value)
-		} else {
-			bstNode.right = bstNode.right.Add(value)
-		}
-	}
-	bstNode.UpdateProperties()
-
-	return bstNode.Rebalance()
+	bstNode.bf = heightRight - heightLeft
 }
