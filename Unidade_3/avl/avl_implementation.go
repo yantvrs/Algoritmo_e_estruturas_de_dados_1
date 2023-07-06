@@ -31,7 +31,26 @@ func NewNode(value int) *BstNode {
 	return node
 }
 
-func (bstNode *BstNode) UpdateProperties
+func (bstNode *BstNode) UpdateProperties() {
+	heightRight := 0
+	heightLeft := 0
+
+	if bstNode.right == nil && bstNode.left == nil {
+		bstNode.height = 0 
+	} else {
+		if bstNode.right != nil {
+			heightRight = bstNode.right.height
+		}
+		if bstNode.left != nil {
+			heightLeft = bstNode.left.height
+		}
+		if heightRight > heightLeft {
+			bstNode.height = heightRight + 1
+		} else {
+			bstNode.height = heightLeft + 1
+		}
+	}
+}
 
 func (bstNode *BstNode) Add(value int) *BstNode {
 	if value <= bstNode.value {
