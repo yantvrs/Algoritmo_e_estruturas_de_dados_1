@@ -43,11 +43,23 @@ func NewNode(value int) *BstNode {
 	Remove(value int) *BstNode
 	IsBst() bool
 	Size() int
-	RotRight() *BstNode
 	RotLeft() *BstNode
 	Rebalance() *BstNode
 	UpdateProperties()
+
+	O retorno do tipo *BstNode na função RotRight() é fundamental para permitir que a rotação à direita altere a estrutura da árvore corretamente, atualizando os ponteiros dos nós. Ele permite que a nova raiz da subárvore seja retornada e atribuída a variáveis ou usada em outras operações, possibilitando o uso e manipulação adequados da árvore rotacionada.
 */
+
+func (bstNode *BstNode) RotRight() *BstNode{
+	newRoot := bstNode.left
+	bstNode.left = newRoot.right
+	newRoot.right = bstNode
+	bstNode.UpdateProperties()
+	newRoot.UpdateProperties()
+	return newRoot
+}
+
+
 
 func (bstNode *BstNode) Add(value int) *BstNode {
 	if value < bstNode.value {
