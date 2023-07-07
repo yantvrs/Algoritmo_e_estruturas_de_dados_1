@@ -43,7 +43,6 @@ func NewNode(value int) *BstNode {
 	Remove(value int) *BstNode
 	IsBst() bool
 	Size() int
-	RotLeft() *BstNode
 	Rebalance() *BstNode
 	UpdateProperties()
 
@@ -54,6 +53,15 @@ func (bstNode *BstNode) RotRight() *BstNode{
 	newRoot := bstNode.left
 	bstNode.left = newRoot.right
 	newRoot.right = bstNode
+	bstNode.UpdateProperties()
+	newRoot.UpdateProperties()
+	return newRoot
+}
+
+func (bstNode *BstNode) Rotleft() *BstNode{
+	newRoot := bstNode.right
+	bstNode.right = newRoot.left
+	newRoot.left = bstNode
 	bstNode.UpdateProperties()
 	newRoot.UpdateProperties()
 	return newRoot
