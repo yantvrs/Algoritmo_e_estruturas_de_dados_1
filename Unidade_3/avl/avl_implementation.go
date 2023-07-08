@@ -43,16 +43,40 @@ func NewNode(value int) *BstNode {
 	Remove(value int) *BstNode
 	IsBst() bool
 	Size() int
-	Rebalance() *BstNode
 	UpdateProperties()
 
-	O retorno do tipo *BstNode na função RotRight() é fundamental para permitir que a rotação à direita altere a estrutura da árvore corretamente, atualizando os ponteiros dos nós. Ele permite que a nova raiz da subárvore seja retornada e atribuída a variáveis ou usada em outras operações, possibilitando o uso e manipulação adequados da árvore rotacionada.
+	Retornar um ponteiro para um nó da árvore AVL nas funções de rebalanceamento é fundamental para garantir que as rotações realizadas durante o processo de balanceamento sejam refletidas na estrutura da árvore original. Ao retornar o ponteiro atualizado, as alterações nos relacionamentos entre os nós e a posição do nó desbalanceado são corretamente propagadas, mantendo a consistência da árvore. Isso é essencial para realizar operações como inserção, remoção e rebalanceamento de forma adequada e preservar as propriedades de uma árvore AVL.
 */
+
+func (bstNode *BstNode) Rebalance() *BstNode {
+	if bstNode.bf <= -2 {
+		if bstNode.left.bf == -1 {
+			return bstNode.RebalanceToLeftLeft()
+		} else if bstNode.left.bf == 0 {
+			return bstNode.RebalanceToLeftLeft()
+		} else {
+			return bstNode.RebalanceToLeftRight()
+		}
+	} else if bstNode.bf >= 2 {
+		if bstNode.right.bf == 1 {
+			return bstNode.RebalanceToRightRight()
+		} else if bstNode.right.bf == 0 {
+			return bstNode.RebalanceToRightRight()				
+		} else {
+			return bstNode.RebalanceToRightLeft()
+		}
+	}
+	return bstNode
+}
+
+//Rotações 
 
 func (bstNode *BstNode) RotRight() *BstNode{
 	newRoot := bstNode.left
 	bstNode.left = newRoot.right
 	newRoot.right = bstNode
+
+	// A ordem dos elementos a seguir é muito importante
 	bstNode.UpdateProperties()
 	newRoot.UpdateProperties()
 	return newRoot
@@ -62,15 +86,35 @@ func (bstNode *BstNode) Rotleft() *BstNode{
 	newRoot := bstNode.right
 	bstNode.right = newRoot.left
 	newRoot.left = bstNode
+
+
 	bstNode.UpdateProperties()
 	newRoot.UpdateProperties()
 	return newRoot
 }
 
+// Rebalanceado árvore
 
+func (bstNode *BstNode) RebalanceToLeftLeft() *BstNode {
+	return bstNode.RotRight()
+}
+
+func (bstNode *BstNode) RebalanceToLeftRight() *BstNode {
+	bstNode.left = bstNode.RotRight() // Redução do caso 2 para o caso 1
+	return bstNode.Rotleft()
+}
+
+func (bstNode *BstNode) RebalanceToRightRight() *BstNode {
+	return bstNode.Rotleft()
+}
+
+func (bstNode *BstNode) RebalanceToRightLeft() *BstNode {
+	bstNode.right = bstNode.Rotleft() // Redução do caso 4 para o caso 3
+	return bstNode.RotRight()
+}
 
 func (bstNode *BstNode) Add(value int) *BstNode {
-	if value < bstNode.value {
+	if value <= bstNode.value {
 		if bstNode.left == nil {
 			bstNode.left = NewNode(value)
 		} else {
