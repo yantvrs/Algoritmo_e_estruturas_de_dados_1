@@ -43,9 +43,8 @@ func NewNode(value int) *BstNode {
 	Remove(value int) *BstNode
 	IsBst() bool
 	Size() int
-	UpdateProperties()
 
-	Retornar um ponteiro para um nó da árvore AVL nas funções de rebalanceamento é fundamental para garantir que as rotações realizadas durante o processo de balanceamento sejam refletidas na estrutura da árvore original. Ao retornar o ponteiro atualizado, as alterações nos relacionamentos entre os nós e a posição do nó desbalanceado são corretamente propagadas, mantendo a consistência da árvore. Isso é essencial para realizar operações como inserção, remoção e rebalanceamento de forma adequada e preservar as propriedades de uma árvore AVL.
+	Retornar um ponteiro para um *BstNode na função de adição em árvores AVL é fundamental para refletir as alterações na estrutura da árvore original. Esse retorno permite atualizar corretamente a árvore após a adição de um novo nó, realizar a recursão adequada para encontrar a posição correta do nó e aplicar as ações de rebalanceamento necessárias para manter a propriedade de balanceamento da árvore AVL. Além disso, o retorno do ponteiro atualizado garante a consistência da árvore e a integridade das referências entre os nós.
 */
 
 func (bstNode *BstNode) Rebalance() *BstNode {
@@ -151,4 +150,45 @@ func (bstNode *BstNode) UpdateProperties() {
 		}
 	}
 	bstNode.bf = heightRight - heightLeft
+}
+
+// func max and min
+
+func (bstNode *BstNode) Min() int {
+	if bstNode.left != nil {
+		return bstNode.left.Min()
+	} else {
+		return bstNode.value
+	}
+}
+
+func (bstNode *BstNode) Max() int {
+	if bstNode.right == nil {
+		return bstNode.value
+	} else {
+		return bstNode.right.Max()
+	}
+}
+
+func (bstNode *BstNode) Remove(value int) *BstNode {
+	if value < bstNode.value {
+		bstNode.left = bstNode.left.Remove(value)
+	} else if value > bstNode.value {
+		bstNode.right = bstNode.right.Remove(value)
+	} else {
+		if bstNode.right == nil && bstNode.left == nil {
+			return nil 
+		} else if bstNode.right != nil && bstNode.left == nil {
+			return bstNode.right
+		} else if bstNode.right == nil && bstNode.left != nil {
+			return bstNode.left
+		} else {
+			maxValue := bstNode.left.Max()
+			bstNode.value = maxValue
+			bstNode.left = bstNode.left.Remove(maxValue)
+			return bstNode
+		}
+	}
+	bstNode.UpdateProperties()
+	return bstNode.Rebalance()
 }
