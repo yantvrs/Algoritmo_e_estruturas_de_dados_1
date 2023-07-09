@@ -44,7 +44,7 @@ func NewNode(value int) *BstNode {
 	IsBst() bool
 	Size() int
 
-	Retornar um ponteiro para um *BstNode na função de adição em árvores AVL é fundamental para refletir as alterações na estrutura da árvore original. Esse retorno permite atualizar corretamente a árvore após a adição de um novo nó, realizar a recursão adequada para encontrar a posição correta do nó e aplicar as ações de rebalanceamento necessárias para manter a propriedade de balanceamento da árvore AVL. Além disso, o retorno do ponteiro atualizado garante a consistência da árvore e a integridade das referências entre os nós.
+	Retornar um ponteiro para um *BstNode na função de remoção em árvores AVL é fundamental para refletir as alterações na estrutura da árvore original. Esse retorno permite atualizar corretamente a árvore após a remoção de um nó, manter a recursão adequada para encontrar e remover o nó desejado, aplicar as ações de reequilíbrio necessárias para preservar a propriedade de balanceamento da árvore AVL e manter a consistência da árvore. Além disso, o retorno do ponteiro atualizado permite a integração com outras operações e a correta manipulação da estrutura da árvore.
 */
 
 func (bstNode *BstNode) Rebalance() *BstNode {
@@ -191,4 +191,18 @@ func (bstNode *BstNode) Remove(value int) *BstNode {
 	}
 	bstNode.UpdateProperties()
 	return bstNode.Rebalance()
+}
+
+func (bstNode *BstNode) IsAvl() bool {
+	if bstNode.bf > -2 && bstNode.bf < 2 {
+		if bstNode.left != nil {
+			return bstNode.left.IsAvl()
+		}
+		if bstNode.right != nil {
+			return bstNode.right.IsAvl()
+		}
+		return true
+	} else {
+		return false
+	}
 }
