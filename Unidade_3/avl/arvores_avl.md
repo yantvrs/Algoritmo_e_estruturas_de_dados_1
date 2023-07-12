@@ -49,7 +49,6 @@
   - rotação a "direita e a "esquerda"
 
   Como balancear uma árvore? Algoritmo AVL
-
   . Inserção na subárvore direita do filho à direita
     > Solução RR: Rotação simples à esquerda
   . Inserção na subárvore esquerda do filho à esquerda
