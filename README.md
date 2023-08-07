@@ -1,15 +1,27 @@
-# :computer: Algoritmo e Estrutura de Dados 1
-Este repositório contém os códigos, simulações, atividades e estudos da disciplina de Algoritmo e Estrutura de Dados 1, oferecida pela Universidade Federal do Rio Grande do Norte. O objetivo desta disciplina é introduzir os conceitos fundamentais de algoritmos e estruturas de dados e apresentar a linguagem de programação Go.
+# :computer: Algorithm and Data Structures 1
+This repository contains the code, simulations, activities, and studies from the Algorithm and Data Structures 1 course offered by the Federal University of Rio Grande do Norte. The objective of this course is to introduce fundamental concepts of algorithms and data structures and to present the Go programming language.
 
-## :books: Sobre a disciplina
-A disciplina de Algoritmo e Estrutura de Dados 1 tem como objetivo ensinar aos estudantes os fundamentos da programação e da ciência da computação. Ao longo do curso, serão abordados tópicos como estruturas de dados lineares (vetores, listas, pilhas e filas), estruturas de dados não-lineares (árvores, grafos), algoritmos de busca e ordenação, entre outros.
+## :books: About the Course
+The Algorithm and Data Structures 1 course aims to teach students the fundamentals of programming and computer science. Throughout the course, topics such as linear data structures (arrays, lists, stacks, and queues), non-linear data structures (trees, graphs), search and sorting algorithms, among others, will be covered.
 
-A disciplina também tem como objetivo apresentar a linguagem de programação Go, que é uma linguagem moderna, eficiente e segura, desenvolvida pelo Google.
+The course also aims to introduce the Go programming language, which is a modern, efficient, and safe language developed by Google.
 
-## :file_folder: Como usar os códigos e simulações
-Para utilizar os códigos e simulações disponíveis neste repositório, é necessário ter o Go instalado em sua máquina. Além disso, é preciso ter conhecimento em programação na linguagem Go.
+## :pencil: Topics Covered
+During the course, students will learn about a variety of topics, including:
 
-Para executar um código ou simulação, basta navegar até a pasta correspondente e executar o comando `go run nome_do_arquivo.go` no terminal. Em seguida, siga as instruções contidas no arquivo README da pasta para executar o código ou simulação desejados.
+- Linear data structures: Lists, queues, and stacks.
+- Search algorithms: Sequential search and binary search.
+- Sorting algorithms: Bubble-Sort, Selection-Sort, Insertion-Sort, Quick-Sort, Merge-Sort, Linear Sorting.
+- Binary trees: Properties and traversal.
+- Search trees: Insertion, Removal, and Search operations.
+- Balanced trees: AVL trees.
+- Hash tables: Hashing and collision resolution.
+- Heaps.
 
-## :memo: Licença
-Este repositório é licenciado sob a licença MIT. Consulte o arquivo LICENSE para obter mais informações.
+## :file_folder: Using the Code and Simulations
+To use the code and simulations available in this repository, you need to have Go installed on your machine. Additionally, programming knowledge in the Go language is required.
+
+To execute a code or simulation, simply navigate to the corresponding folder and run the command `go run filename.go` in the terminal. Then, follow the instructions provided in the README file of the folder to execute the desired code or simulation.
+
+## :memo: License
+This repository is licensed under the MIT License. See the LICENSE file for more information.
